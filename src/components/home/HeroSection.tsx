@@ -67,20 +67,20 @@ export default function HeroSection({ atmosphere, onAtmosphereChange }: HeroSect
             </div>
 
             {/* Quick Metrics */}
-            <div className="grid grid-cols-3 gap-3 pt-6 border-t-[2.5px] border-ink/15 max-w-lg">
-              <div className="p-3 bg-snow rounded-xl border-[2px] border-ink shadow-brutal-sm">
-                <div className="text-xs text-ink/60 font-bold uppercase">Public Vault</div>
-                <div className="text-lg sm:text-xl font-black text-ink">5.4M $CAPY</div>
+            <div className="grid grid-cols-3 gap-2 sm:gap-3 pt-6 border-t-[2.5px] border-ink/15 max-w-lg">
+              <div className="p-2 sm:p-3 bg-snow rounded-xl border-[2px] border-ink shadow-brutal-sm">
+                <div className="text-[10px] sm:text-xs text-ink/60 font-bold uppercase truncate">Public Vault</div>
+                <div className="text-sm sm:text-xl font-black text-ink">5.4M $CAPY</div>
               </div>
-              <div className="p-3 bg-snow rounded-xl border-[2px] border-ink shadow-brutal-sm">
-                <div className="text-xs text-ink/60 font-bold uppercase">Solana Speed</div>
-                <div className="text-lg sm:text-xl font-black text-solana-purple flex items-center gap-1">
-                  <Zap className="w-4 h-4" /> 400ms
+              <div className="p-2 sm:p-3 bg-snow rounded-xl border-[2px] border-ink shadow-brutal-sm">
+                <div className="text-[10px] sm:text-xs text-ink/60 font-bold uppercase truncate">Solana Speed</div>
+                <div className="text-sm sm:text-xl font-black text-solana-purple flex items-center gap-1">
+                  <Zap className="w-3.5 h-3.5 sm:w-4 sm:h-4 shrink-0" /> 400ms
                 </div>
               </div>
-              <div className="p-3 bg-snow rounded-xl border-[2px] border-ink shadow-brutal-sm">
-                <div className="text-xs text-ink/60 font-bold uppercase">Max Multiplier</div>
-                <div className="text-lg sm:text-xl font-black text-[#F77F00]">2.20x Yield</div>
+              <div className="p-2 sm:p-3 bg-snow rounded-xl border-[2px] border-ink shadow-brutal-sm">
+                <div className="text-[10px] sm:text-xs text-ink/60 font-bold uppercase truncate">Max Multiplier</div>
+                <div className="text-sm sm:text-xl font-black text-[#F77F00]">2.20x Yield</div>
               </div>
             </div>
           </div>
