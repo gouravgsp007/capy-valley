@@ -2,7 +2,7 @@ import React from 'react';
 
 interface PixelBadgeProps {
   children: React.ReactNode;
-  variant?: 'yuzu' | 'onsen' | 'matcha' | 'coral' | 'snow';
+  variant?: 'yuzu' | 'onsen' | 'matcha' | 'coral' | 'snow' | 'solana';
   size?: 'sm' | 'md';
   className?: string;
 }
@@ -19,6 +19,7 @@ export default function PixelBadge({
     matcha: 'bg-matcha text-white border-ink',
     coral: 'bg-[#FF7675] text-white border-ink',
     snow: 'bg-snow text-ink border-ink',
+    solana: 'bg-gradient-to-r from-solana-purple to-[#14F195] text-white border-ink',
   }[variant];
 
   const sizeStyles = {
@@ -28,7 +29,7 @@ export default function PixelBadge({
 
   return (
     <span
-      className={`inline-flex items-center gap-1.5 font-pixel font-bold rounded-lg shadow-brutal-sm select-none uppercase tracking-wider ${sizeStyles} ${variantStyles} ${className}`}
+      className={`inline-flex items-center gap-1.5 font-black rounded-lg shadow-brutal-sm select-none uppercase tracking-wider ${sizeStyles} ${variantStyles} ${className}`}
     >
       {children}
     </span>

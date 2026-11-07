@@ -15,7 +15,7 @@ export default function RoadmapTimeline() {
       case 'Waves':
         return <Waves className="w-5 h-5 text-onsen" />;
       case 'Landmark':
-        return <Landmark className="w-5 h-5 text-coral" />;
+        return <Landmark className="w-5 h-5 text-solana-purple" />;
       default:
         return <Sparkles className="w-5 h-5" />;
     }
@@ -28,11 +28,11 @@ export default function RoadmapTimeline() {
           <PixelBadge variant="yuzu" size="md">
             PROJECT HORIZONS
           </PixelBadge>
-          <h2 className="font-pixel text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink">
-            The Valley Roadmap
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-ink">
+            The Solana Valley Roadmap
           </h2>
-          <p className="font-cozy text-ink/80 text-lg">
-            From the initial Pioneer whitelist to dynamic on-chain Baby Capy evolutions and community DAO governance.
+          <p className="text-ink/80 text-lg font-bold">
+            From the initial Solana Pioneer whitelist to dynamic Metaplex / Solana Core Baby Capy evolutions and community Realms DAO governance.
           </p>
         </div>
 
@@ -47,7 +47,7 @@ export default function RoadmapTimeline() {
                 className="p-6 bg-snow rounded-2xl border-[3px] border-ink shadow-brutal flex flex-col justify-between relative overflow-hidden"
               >
                 {isInProgress && (
-                  <div className="absolute top-0 right-0 bg-yuzu text-ink font-pixel text-[11px] font-bold px-3 py-1 border-b-[2px] border-l-[2px] border-ink">
+                  <div className="absolute top-0 right-0 bg-yuzu text-ink text-[11px] font-black px-3 py-1 border-b-[2px] border-l-[2px] border-ink">
                     CURRENT
                   </div>
                 )}
@@ -57,28 +57,28 @@ export default function RoadmapTimeline() {
                     <div className="w-10 h-10 rounded-xl bg-cream border-[2px] border-ink flex items-center justify-center shadow-brutal-sm">
                       {getIcon(item.icon)}
                     </div>
-                    <span className="font-pixel text-xs font-bold text-ink/60 uppercase">
+                    <span className="text-xs font-black text-ink/60 uppercase">
                       {item.quarter}
                     </span>
                   </div>
 
-                  <h3 className="font-pixel text-lg font-bold text-ink leading-snug">
+                  <h3 className="text-lg font-black text-ink leading-snug">
                     {item.title}
                   </h3>
 
-                  <p className="font-cozy text-sm text-ink/70 leading-relaxed">
+                  <p className="text-sm text-ink/70 leading-relaxed font-bold">
                     {item.desc}
                   </p>
                 </div>
 
-                <div className="mt-6 pt-3 border-t-[2px] border-ink/10 flex items-center justify-between text-xs font-pixel font-bold">
+                <div className="mt-6 pt-3 border-t-[2px] border-ink/10 flex items-center justify-between text-xs font-black">
                   <span className="text-ink/60">Milestone #{index + 1}</span>
                   <span
                     className={
                       isCompleted
                         ? 'text-matcha'
                         : isInProgress
-                        ? 'text-yuzu-gold font-extrabold'
+                        ? 'text-yuzu-gold font-black'
                         : 'text-ink/40'
                     }
                   >

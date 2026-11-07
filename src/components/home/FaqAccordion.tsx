@@ -13,9 +13,9 @@ export default function FaqAccordion() {
   const categories = [
     { id: 'all', label: 'All Questions' },
     { id: 'gameplay', label: 'Gameplay' },
-    { id: 'vault', label: 'Public Vault' },
+    { id: 'vault', label: 'Solana Vault' },
     { id: 'capys', label: 'Baby Capys' },
-    { id: 'tokenomics', label: 'Tokenomics' },
+    { id: 'tokenomics', label: 'Solana Wallets' },
   ];
 
   const filteredItems = FAQ_ITEMS.filter((item) =>
@@ -31,14 +31,14 @@ export default function FaqAccordion() {
     <section id="faq" className="py-20 px-4 lg:px-8">
       <div className="max-w-4xl mx-auto space-y-10">
         <div className="text-center space-y-3">
-          <PixelBadge variant="onsen" size="md">
+          <PixelBadge variant="solana" size="md">
             GOT QUESTIONS?
           </PixelBadge>
-          <h2 className="font-pixel text-3xl sm:text-4xl lg:text-5xl font-extrabold text-ink">
+          <h2 className="text-3xl sm:text-4xl lg:text-5xl font-black text-ink">
             Frequently Asked Questions
           </h2>
-          <p className="font-cozy text-ink/80 text-base">
-            Everything you need to know about the valley, dynamic Baby Capys, and the $CAPY reward vault.
+          <p className="text-ink/80 text-base font-bold">
+            Everything you need to know about the valley, dynamic Baby Capys, and the Solana $CAPY reward vault.
           </p>
         </div>
 
@@ -54,7 +54,7 @@ export default function FaqAccordion() {
                   setSelectedCategory(cat.id);
                   setOpenIndex(null);
                 }}
-                className={`font-pixel text-xs sm:text-sm font-bold px-3.5 py-1.5 rounded-xl border-[2px] border-ink transition-all cursor-pointer ${
+                className={`text-xs sm:text-sm font-black px-4 py-2 rounded-xl border-[2px] border-ink transition-all cursor-pointer ${
                   isSelected
                     ? 'bg-yuzu text-ink shadow-brutal-sm -translate-y-0.5'
                     : 'bg-snow text-ink/70 hover:bg-sand/40'
@@ -77,7 +77,7 @@ export default function FaqAccordion() {
               >
                 <button
                   onClick={() => toggleItem(idx)}
-                  className="w-full px-6 py-5 flex items-center justify-between text-left gap-4 font-pixel font-bold text-lg text-ink cursor-pointer hover:bg-cream/50 transition-colors"
+                  className="w-full px-6 py-5 flex items-center justify-between text-left gap-4 font-black text-lg text-ink cursor-pointer hover:bg-cream/50 transition-colors"
                 >
                   <span>{item.question}</span>
                   <div className="w-8 h-8 rounded-lg bg-sand border-[2px] border-ink flex items-center justify-center shrink-0 shadow-brutal-sm">
@@ -90,7 +90,7 @@ export default function FaqAccordion() {
                 </button>
 
                 {isOpen && (
-                  <div className="px-6 pb-6 pt-1 font-cozy text-ink/80 text-base leading-relaxed border-t-[2px] border-ink/10 bg-cream/30">
+                  <div className="px-6 pb-6 pt-1 text-ink/80 text-base leading-relaxed border-t-[2px] border-ink/10 bg-cream/30 font-bold">
                     {item.answer}
                   </div>
                 )}

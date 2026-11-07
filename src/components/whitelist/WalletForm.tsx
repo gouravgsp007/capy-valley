@@ -2,7 +2,7 @@
 
 import React, { useState } from 'react';
 import BrutalButton from '../common/BrutalButton';
-import { isValidEvmAddress, sanitizeHandle } from '@/lib/evm';
+import { isValidSolanaAddress, sanitizeHandle } from '@/lib/solana';
 import { WhitelistEntry } from '@/lib/types';
 import { sound } from '@/lib/audio';
 import { saveEntry } from '@/lib/storage';
@@ -30,8 +30,8 @@ export default function WalletForm({ tasksCompleted, onSuccess }: WalletFormProp
       return;
     }
 
-    if (!isValidEvmAddress(wallet)) {
-      setError('Invalid EVM address. Must start with 0x and have 40 hexadecimal characters.');
+    if (!isValidSolanaAddress(wallet)) {
+      setError('Invalid Solana address. Must be a valid 32-44 character Base58 public key (Phantom, Solflare, Backpack).');
       sound.playBubblePop();
       return;
     }
@@ -61,11 +61,10 @@ export default function WalletForm({ tasksCompleted, onSuccess }: WalletFormProp
 
       if (res.ok && data.success && data.entry) {
         sound.playSuccess();
-        // Synchronize with local storage so Leaderboard & CSV export reflect immediately
+        // Synchronize with local storage
         saveEntry(data.entry);
         onSuccess(data.entry);
       } else {
-        // If conflict or validation error
         if (data.error) {
           setError(data.error);
         } else {
@@ -98,22 +97,22 @@ export default function WalletForm({ tasksCompleted, onSuccess }: WalletFormProp
   return (
     <form onSubmit={handleSubmit} className="space-y-4">
       <div className="space-y-1">
-        <label className="font-pixel text-xs font-bold text-ink/70 uppercase flex items-center gap-1.5">
-          <Wallet className="w-3.5 h-3.5 text-onsen" />
-          EVM Wallet Address (Arbitrum / Base / Ethereum)
+        <label className="text-xs font-black text-ink/70 uppercase flex items-center gap-1.5">
+          <Wallet className="w-3.5 h-3.5 text-solana-purple" />
+          Solana Public Key (Phantom / Solflare / Backpack)
         </label>
         <input
           type="text"
           value={wallet}
           onChange={(e) => setWallet(e.target.value)}
-          placeholder="0x71C7656EC7ab88b098defB751B7401B5f6d8976F"
-          className="w-full px-4 py-3 rounded-xl border-[2.5px] border-ink bg-snow font-mono text-sm text-ink placeholder:text-ink/30 focus:outline-none focus:ring-2 focus:ring-yuzu shadow-brutal-sm"
+          placeholder="7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU"
+          className="w-full px-4 py-3 rounded-xl border-[2.5px] border-ink bg-snow font-mono text-sm text-ink placeholder:text-ink/30 focus:outline-none focus:ring-2 focus:ring-solana-purple shadow-brutal-sm font-bold"
         />
       </div>
 
       <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
         <div className="space-y-1">
-          <label className="font-pixel text-xs font-bold text-ink/70 uppercase flex items-center gap-1.5">
+          <label className="text-xs font-black text-ink/70 uppercase flex items-center gap-1.5">
             <AtSign className="w-3.5 h-3.5 text-matcha" />
             Your X Handle
           </label>
@@ -122,12 +121,12 @@ export default function WalletForm({ tasksCompleted, onSuccess }: WalletFormProp
             value={handle}
             onChange={(e) => setHandle(e.target.value)}
             placeholder="@capy_pioneer"
-            className="w-full px-4 py-3 rounded-xl border-[2.5px] border-ink bg-snow font-pixel text-sm text-ink placeholder:text-ink/30 focus:outline-none focus:ring-2 focus:ring-yuzu shadow-brutal-sm"
+            className="w-full px-4 py-3 rounded-xl border-[2.5px] border-ink bg-snow text-sm text-ink placeholder:text-ink/30 focus:outline-none focus:ring-2 focus:ring-yuzu shadow-brutal-sm font-bold"
           />
         </div>
 
         <div className="space-y-1">
-          <label className="font-pixel text-xs font-bold text-ink/70 uppercase flex items-center gap-1.5">
+          <label className="text-xs font-black text-ink/70 uppercase flex items-center gap-1.5">
             <LinkIcon className="w-3.5 h-3.5 text-coral" />
             Proof of Repost / Tweet Link
           </label>
@@ -136,13 +135,13 @@ export default function WalletForm({ tasksCompleted, onSuccess }: WalletFormProp
             value={proof}
             onChange={(e) => setProof(e.target.value)}
             placeholder="https://x.com/yourname/status/..."
-            className="w-full px-4 py-3 rounded-xl border-[2.5px] border-ink bg-snow font-pixel text-sm text-ink placeholder:text-ink/30 focus:outline-none focus:ring-2 focus:ring-yuzu shadow-brutal-sm"
+            className="w-full px-4 py-3 rounded-xl border-[2.5px] border-ink bg-snow text-sm text-ink placeholder:text-ink/30 focus:outline-none focus:ring-2 focus:ring-yuzu shadow-brutal-sm font-bold"
           />
         </div>
       </div>
 
       {error && (
-        <div className="p-3 bg-[#FF7675]/20 rounded-xl border-[2px] border-[#D63031] text-[#D63031] text-xs font-pixel font-bold flex items-center gap-2">
+        <div className="p-3 bg-[#FF7675]/20 rounded-xl border-[2px] border-[#D63031] text-[#D63031] text-xs font-black flex items-center gap-2">
           <AlertCircle className="w-4 h-4 shrink-0" />
           <span>{error}</span>
         </div>
@@ -156,7 +155,7 @@ export default function WalletForm({ tasksCompleted, onSuccess }: WalletFormProp
         className="w-full mt-2"
         soundType="success"
       >
-        {loading ? 'Verifying on Chain...' : 'Claim Guaranteed Whitelist Spot 🍊'}
+        {loading ? 'Verifying on Solana...' : 'Claim Guaranteed Solana Whitelist Spot 🍊'}
       </BrutalButton>
     </form>
   );

@@ -1,30 +1,34 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import { isValidEvmAddress, formatAddress, sanitizeHandle } from '../src/lib/evm.ts';
+import { isValidSolanaAddress, formatAddress, sanitizeHandle } from '../src/lib/solana.ts';
 import { calculateFarmYield } from '../src/lib/calculator.ts';
 
-test('EVM Address Validation', async (t) => {
-  await t.test('accepts valid EVM addresses', () => {
-    assert.equal(isValidEvmAddress('0x71C7656EC7ab88b098defB751B7401B5f6d8976F'), true);
-    assert.equal(isValidEvmAddress('0x0000000000000000000000000000000000000000'), true);
-    assert.equal(isValidEvmAddress('0xabcdefabcdefabcdefabcdefabcdefabcdefabcd'), true);
+test('Solana Address Validation', async (t) => {
+  await t.test('accepts valid Solana Base58 public keys', () => {
+    // Standard 44-char base58 Solana public key
+    assert.equal(isValidSolanaAddress('7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU'), true);
+    assert.equal(isValidSolanaAddress('TokenkegQfeZyiNwAJbNbGKPFXCWuBvf9Ss623VQ5DA'), true);
+    assert.equal(isValidSolanaAddress('11111111111111111111111111111111'), true); // System program (32 chars)
   });
 
-  await t.test('rejects invalid EVM addresses', () => {
-    assert.equal(isValidEvmAddress(''), false);
-    assert.equal(isValidEvmAddress('0x123'), false);
-    assert.equal(isValidEvmAddress('71C7656EC7ab88b098defB751B7401B5f6d8976F'), false); // missing 0x
-    assert.equal(isValidEvmAddress('0x71C7656EC7ab88b098defB751B7401B5f6d8976G'), false); // invalid hex 'G'
-    assert.equal(isValidEvmAddress('random text'), false);
+  await t.test('rejects invalid Solana addresses', () => {
+    assert.equal(isValidSolanaAddress(''), false);
+    assert.equal(isValidSolanaAddress('0x71C7656EC7ab88b098defB751B7401B5f6d8976F'), false); // EVM 0x address rejected
+    assert.equal(isValidSolanaAddress('7xKXtg'), false); // Too short (<32)
+    assert.equal(isValidSolanaAddress('7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU000000000000000000000'), false); // Too long (>44)
+    assert.equal(isValidSolanaAddress('7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAs0'), false); // '0' is not in Base58
+    assert.equal(isValidSolanaAddress('7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsI'), false); // 'I' is not in Base58
+    assert.equal(isValidSolanaAddress('7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsO'), false); // 'O' is not in Base58
+    assert.equal(isValidSolanaAddress('7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsl'), false); // 'l' is not in Base58
   });
 
-  await t.test('formats address correctly with ellipsis', () => {
-    assert.equal(formatAddress('0x71C7656EC7ab88b098defB751B7401B5f6d8976F'), '0x71C7...976F');
-    assert.equal(formatAddress('invalid'), 'invalid');
+  await t.test('formats Solana address correctly with ellipsis', () => {
+    assert.equal(formatAddress('7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU'), '7xKX...gAsU');
+    assert.equal(formatAddress('short'), 'short');
   });
 
-  await t.test('sanitizes handles properly', () => {
-    assert.equal(sanitizeHandle('@capy_master'), 'capy_master');
+  await t.test('sanitizes social handles properly', () => {
+    assert.equal(sanitizeHandle('@capy_solana'), 'capy_solana');
     assert.equal(sanitizeHandle('capy_pioneer!'), 'capy_pioneer');
   });
 });

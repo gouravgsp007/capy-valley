@@ -5,7 +5,7 @@ import PixelBadge from '../common/PixelBadge';
 import BrutalButton from '../common/BrutalButton';
 import CapyPixelRenderer from '../canvas/CapyPixelRenderer';
 import { WhitelistEntry } from '@/lib/types';
-import { formatAddress } from '@/lib/evm';
+import { formatAddress } from '@/lib/solana';
 import { Share2, Sparkles, CheckCircle2 } from 'lucide-react';
 
 interface PioneerPassportCardProps {
@@ -15,23 +15,23 @@ interface PioneerPassportCardProps {
 
 export default function PioneerPassportCard({ entry, onReset }: PioneerPassportCardProps) {
   const shareText = encodeURIComponent(
-    `Just secured my Pioneer Whitelist spot for @CapyValleyGame! ♨️🍊\n\nPioneer Pass #${String(
+    `Just secured my Solana Pioneer Whitelist spot for @CapyValleySol! ♨️🍊\n\nPioneer Pass #${String(
       entry.pioneerId
-    ).padStart(4, '0')} verified. Raising dynamic Baby Capys and harvesting $CAPY.\n\nJoin the Hot Springs:`
+    ).padStart(4, '0')} verified on Solana. Raising dynamic Baby Capys and harvesting $CAPY with sub-cent fees.\n\nJoin the Hot Springs:`
   );
-  const shareUrl = encodeURIComponent('https://capyvalley.xyz/whitelist');
+  const shareUrl = encodeURIComponent('https://capyvalleysol.xyz/whitelist');
 
   return (
     <div className="bg-snow p-6 sm:p-8 rounded-3xl border-[3.5px] border-ink shadow-brutal-lg max-w-xl mx-auto space-y-6 animate-bob">
       <div className="flex items-center justify-between pb-4 border-b-[2.5px] border-ink">
         <div className="flex items-center gap-2">
           <Sparkles className="w-5 h-5 text-yuzu-gold" />
-          <span className="font-pixel text-lg font-bold text-ink">
+          <span className="text-lg font-black text-ink">
             VALLEY PIONEER PASSPORT
           </span>
         </div>
-        <PixelBadge variant="yuzu" size="sm">
-          VERIFIED
+        <PixelBadge variant="solana" size="sm">
+          SOLANA VERIFIED
         </PixelBadge>
       </div>
 
@@ -47,17 +47,17 @@ export default function PioneerPassportCard({ entry, onReset }: PioneerPassportC
         </div>
 
         <div className="space-y-2 text-center sm:text-left">
-          <div className="font-pixel text-xs font-bold text-matcha uppercase tracking-wider flex items-center justify-center sm:justify-start gap-1">
+          <div className="text-xs font-black text-matcha uppercase tracking-wider flex items-center justify-center sm:justify-start gap-1">
             <CheckCircle2 className="w-3.5 h-3.5" />
-            Guaranteed Pioneer Pass
+            Guaranteed Solana Pioneer Pass
           </div>
-          <div className="font-pixel text-3xl font-extrabold text-ink">
+          <div className="text-3xl font-black text-ink">
             Pioneer #{String(entry.pioneerId).padStart(4, '0')}
           </div>
-          <div className="font-mono text-xs font-bold text-ink/70 bg-snow/80 px-2.5 py-1 rounded-lg border border-ink inline-block">
+          <div className="font-mono text-xs font-black text-ink/70 bg-snow/80 px-2.5 py-1 rounded-lg border border-ink inline-block">
             {formatAddress(entry.walletAddress)}
           </div>
-          <div className="font-pixel text-xs text-ink/80 block">
+          <div className="text-xs text-ink/80 block font-black">
             Owner: @{entry.xHandle}
           </div>
         </div>
@@ -84,9 +84,9 @@ export default function PioneerPassportCard({ entry, onReset }: PioneerPassportC
         {onReset && (
           <button
             onClick={onReset}
-            className="w-full text-center font-pixel text-xs text-ink/50 hover:text-ink transition-colors cursor-pointer pt-2"
+            className="w-full text-center text-xs text-ink/50 hover:text-ink transition-colors cursor-pointer pt-2 font-bold"
           >
-            Register another wallet address
+            Register another Solana wallet address
           </button>
         )}
       </div>

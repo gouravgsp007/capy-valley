@@ -14,44 +14,49 @@ export default function Footer() {
           <div className="md:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
               <span className="text-2xl">♨️</span>
-              <span className="font-pixel text-2xl font-bold text-ink">CAPY VALLEY</span>
-              <PixelBadge variant="yuzu" size="sm">L2 GameFi</PixelBadge>
+              <span className="text-2xl font-black text-ink">Capy Valley</span>
+              <PixelBadge variant="solana" size="sm">Solana GameFi</PixelBadge>
             </div>
-            <p className="font-cozy text-ink/80 text-sm max-w-md leading-relaxed">
-              A gentle onsen idle game where you raise Baby Capybaras, cultivate hillside yuzu groves, and share in a non-inflationary community reward vault.
+            <p className="text-ink/80 text-sm max-w-md leading-relaxed font-bold">
+              A gentle onsen idle game on Solana where you raise Baby Capybaras, cultivate hillside yuzu groves, and share in a non-inflationary community SPL reward vault.
             </p>
             <div className="flex items-center gap-2 pt-2">
-              <span className="w-3 h-3 rounded-full bg-[#2ED573] animate-pulse border border-ink" />
-              <span className="font-pixel text-xs text-ink/70">
-                Reward Vault Reserves: 5,420,000 $CAPY (~$128,400)
+              <span className="w-3 h-3 rounded-full bg-solana-green animate-pulse border border-ink" />
+              <span className="text-xs text-ink/70 font-black">
+                Solana Reward Vault Reserves: 5,420,000 $CAPY (~$128,400)
               </span>
             </div>
           </div>
 
-          {/* Col 2: Navigation */}
+          {/* Col 2: Navigation matching user image */}
           <div>
-            <h4 className="font-pixel text-sm font-bold text-ink uppercase tracking-wider mb-3">
+            <h4 className="text-sm font-black text-ink uppercase tracking-wider mb-3">
               Explore
             </h4>
-            <ul className="space-y-2 font-cozy text-sm font-bold text-ink/80">
+            <ul className="space-y-2 text-sm font-black text-ink/80">
               <li>
                 <Link href="/" className="hover:text-matcha transition-colors">
-                  The Valley Map
+                  The valley
                 </Link>
               </li>
               <li>
-                <Link href="/capys" className="hover:text-matcha transition-colors">
-                  Baby Capy Traits
+                <Link href="/capys#growth" className="hover:text-matcha transition-colors">
+                  Growing up
+                </Link>
+              </li>
+              <li>
+                <Link href="/capys#traits" className="hover:text-matcha transition-colors">
+                  Traits
+                </Link>
+              </li>
+              <li>
+                <Link href="/capys#drop" className="hover:text-matcha transition-colors">
+                  The drop
                 </Link>
               </li>
               <li>
                 <Link href="/whitelist" className="hover:text-matcha transition-colors">
-                  Join Whitelist
-                </Link>
-              </li>
-              <li>
-                <Link href="/#vault" className="hover:text-matcha transition-colors">
-                  Reward Vault Mechanics
+                  Solana Whitelist
                 </Link>
               </li>
             </ul>
@@ -59,10 +64,10 @@ export default function Footer() {
 
           {/* Col 3: Social & Community */}
           <div>
-            <h4 className="font-pixel text-sm font-bold text-ink uppercase tracking-wider mb-3">
+            <h4 className="text-sm font-black text-ink uppercase tracking-wider mb-3">
               Hot Springs Lounge
             </h4>
-            <ul className="space-y-2 font-cozy text-sm font-bold text-ink/80">
+            <ul className="space-y-2 text-sm font-black text-ink/80">
               <li>
                 <a
                   href="https://x.com"
@@ -98,12 +103,16 @@ export default function Footer() {
         </div>
 
         {/* Bottom Bar */}
-        <div className="pt-6 border-t-[2px] border-ink/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-pixel text-ink/60">
+        <div className="pt-6 border-t-[2px] border-ink/20 flex flex-col sm:flex-row items-center justify-between gap-4 text-xs font-black text-ink/60">
           <div>
-            © {new Date().getFullYear()} Capy Valley. Built for chill and yield.
+            © {new Date().getFullYear()} Capy Valley on Solana. Built for chill and yield.
           </div>
-          <div>
-            Contract verified • EIP-712 • Fair Play Checked
+          <div className="flex items-center gap-2">
+            <span>Solana Program Verified</span>
+            <span>•</span>
+            <span>Anchor Framework</span>
+            <span>•</span>
+            <span>SPL Token standard</span>
           </div>
         </div>
       </div>

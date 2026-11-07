@@ -1,13 +1,13 @@
 import { FaqItem, GrowthStageInfo, RoadmapMilestone } from './types';
 
 export const SITE_METADATA = {
-  title: 'Capy Valley: Cozy Idle Onsen & Farm on L2',
-  description: 'Relax with chill Capybaras, harvest golden yuzu, and earn $CAPY from a public community reward vault. An idle Web3 clicker crafted for peace and yield.',
+  title: 'Capy Valley: Cozy Idle Onsen & Farm on Solana',
+  description: 'Relax with chill Capybaras, harvest golden yuzu, and earn $CAPY from a public Solana community reward vault. An idle Web3 clicker built on Solana for lightning speed and sub-cent fees.',
   token: '$CAPY',
-  chain: 'Arbitrum / Base (EVM)',
-  twitter: '@CapyValleyGame',
-  discord: 'https://discord.gg/capyvalley',
-  telegram: 'https://t.me/capyvalley',
+  chain: 'Solana',
+  twitter: '@CapyValleySol',
+  discord: 'https://discord.gg/capyvalleysol',
+  telegram: 'https://t.me/capyvalleysol',
 };
 
 export const GROWTH_STAGES: GrowthStageInfo[] = [
@@ -32,7 +32,7 @@ export const GROWTH_STAGES: GrowthStageInfo[] = [
     ageDays: 'Day 22 - 60',
     keeperHours: 14,
     multiplier: '1.60x',
-    description: 'A seasoned hot spring keeper wearing a hand-woven towel. Unlocks automated grove watering and a 14-hour keeper shift.',
+    description: 'A seasoned hot spring keeper wearing a hand-woven towel. Unlocks automated grove watering and a 14-hour keeper shift on Solana.',
     avatarColor: '#9A6B43',
   },
   {
@@ -49,24 +49,24 @@ export const DROP_TIERS = [
   {
     tier: 'Early Pioneers (GTD)',
     supply: '1,200',
-    price: 'Free Claim (Gas only)',
-    perks: 'Guaranteed Baby Capy NFT, Exclusive "Zen Onsen Master" trait, +25% permanent Farm Power boost.',
+    price: 'Free Claim (Solana rent only)',
+    perks: 'Guaranteed Baby Capy Solana NFT, Exclusive "Zen Onsen Master" trait, +25% permanent Farm Power boost.',
     badge: 'Guaranteed',
     highlight: true,
   },
   {
     tier: 'Whitelist Stage',
     supply: '3,800',
-    price: '0.008 ETH (~$25)',
-    perks: 'Priority 24h mint window, 1x Free Yuzu Basket in-game starter pack, discount from public.',
+    price: '0.18 SOL (~$28)',
+    perks: 'Priority 24h mint window on Magic Eden / Tensor, 1x Free Yuzu Basket in-game starter pack.',
     badge: 'Priority',
     highlight: false,
   },
   {
     tier: 'Public Drop',
     supply: '5,000',
-    price: '0.015 ETH (~$48)',
-    perks: 'Open to everyone, dynamic random traits, direct integration with game launch.',
+    price: '0.35 SOL (~$55)',
+    perks: 'Open to everyone with a Phantom, Solflare or Backpack wallet. Instant in-game staking utility.',
     badge: 'Public',
     highlight: false,
   },
@@ -75,29 +75,29 @@ export const DROP_TIERS = [
 export const ROADMAP_ITEMS: RoadmapMilestone[] = [
   {
     quarter: 'Phase 1: Genesis Bath',
-    title: 'Concept & Community Whitelist',
-    desc: 'Launch of Capy Valley showcase, Pioneer Whitelist campaign, smart contract security audits, and pixel art reveals.',
+    title: 'Solana Whitelist & Community',
+    desc: 'Launch of Capy Valley showcase, Solana Pioneer Whitelist campaign, Anchor program audits, and pixel art reveals.',
     status: 'in-progress',
     icon: 'Sparkles',
   },
   {
     quarter: 'Phase 2: The Baby Capys',
-    title: 'Drop & Companion Mint',
-    desc: 'Pioneers claim their Baby Capy NFTs. Reveal event with dynamic on-chain metadata and growth stage tracking.',
+    title: 'Metaplex / Solana Core Mint',
+    desc: 'Pioneers mint their Baby Capy NFTs on Solana. Dynamic on-chain metadata evolution tracking growth stages.',
     status: 'upcoming',
     icon: 'Award',
   },
   {
     quarter: 'Phase 3: Hot Springs Open',
-    title: 'Idle Web Game Launch',
-    desc: 'Public reward vault funded. Groves open for harvesting. Put Capy Keepers to work and claim daily $CAPY rewards.',
+    title: 'Idle Web Game & SPL Vault',
+    desc: 'Solana public reward vault deployed. Groves open for harvesting. Put Capy Keepers to work and claim instant $CAPY payouts.',
     status: 'upcoming',
     icon: 'Waves',
   },
   {
     quarter: 'Phase 4: CapyDAO & Expansion',
-    title: 'Community Vault Governance',
-    desc: 'Capy holders vote on vault distributions, seasonal hot spring expansions, mini-games, and cross-chain groves.',
+    title: 'Solana Realms Governance',
+    desc: 'Capy holders vote via Realms on vault distributions, seasonal hot spring expansions, and community grove upgrades.',
     status: 'upcoming',
     icon: 'Landmark',
   },
@@ -106,27 +106,27 @@ export const ROADMAP_ITEMS: RoadmapMilestone[] = [
 export const FAQ_ITEMS: FaqItem[] = [
   {
     category: 'gameplay',
-    question: 'How does Capy Valley idle gameplay work?',
-    answer: 'You manage a cozy hillside farm with hot spring baths and yuzu fruit groves. Your groves generate Yuzu leaves every second. Tap groves to deliver harvests to the market, or assign a Capy Keeper to automate harvests while you sleep.',
+    question: 'How does Capy Valley idle gameplay work on Solana?',
+    answer: 'You manage a cozy hillside farm with hot spring baths and yuzu fruit groves. Your groves generate Yuzu leaves every second. Thanks to Solana 400ms block times and sub-cent fees, tapping groves and claiming yields is instant and virtually free.',
   },
   {
     category: 'vault',
     question: 'Where do the $CAPY rewards come from?',
-    answer: 'The game never mints inflationary reward tokens out of thin air. Instead, rewards are funded by a dedicated Community Public Reward Vault. Every day, the vault releases a percentage of its contents to players according to their Farm Power score.',
+    answer: 'The game never mints inflationary reward tokens out of thin air. Instead, rewards flow from a dedicated Solana Program Public Reward Vault (SPL Token). Every day, the vault releases a transparent share to players based on their Farm Power.',
   },
   {
     category: 'capys',
     question: 'Do my Baby Capys really grow as I play?',
-    answer: 'Yes! Baby Capys start as Pups and naturally level up as they soak in your onsen and work in your groves. As they evolve into Sprouts, Keepers, and Grand Elders, their offline keeper duration and farm multipliers significantly increase.',
+    answer: 'Yes! Baby Capys are minted as dynamic NFTs on Solana (Metaplex / Solana Core). They start as Pups and level up on-chain as they soak in your onsen and harvest groves, extending offline keeper duration up to 24 hours.',
   },
   {
     category: 'tokenomics',
-    question: 'Can I play without spending hours at a screen?',
-    answer: 'Capy Valley is intentionally designed as a calm, low-stress idle game. A few taps for 3 to 5 minutes a day is all it takes. Your Capy Keepers handle the hard work when you are offline.',
+    question: 'Which Solana wallets can I use?',
+    answer: 'You can use any standard Solana wallet including Phantom, Solflare, Backpack, and Ledger. Your Solana public key is all you need to participate in the Pioneer Whitelist.',
   },
   {
     category: 'vault',
-    question: 'How do I claim my harvested tokens?',
-    answer: 'Rewards accumulate securely inside your game profile on-chain. You can claim your accumulated $CAPY directly into your own Web3 wallet at any time after an initial 24-hour verification cooldown.',
+    question: 'How do I claim my harvested $CAPY tokens?',
+    answer: 'Rewards accumulate securely inside your game profile on Solana. You can claim your accumulated $CAPY directly into your Phantom or Solflare wallet at any time with instant finality.',
   },
 ];

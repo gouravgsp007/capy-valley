@@ -10,17 +10,17 @@ import { Sparkles, CheckCircle2 } from 'lucide-react';
 
 export default function MintTiersBreakdown() {
   return (
-    <section className="py-16">
+    <section id="drop" className="py-16 scroll-mt-24">
       <div className="space-y-10">
         <div className="text-center max-w-2xl mx-auto space-y-3">
-          <PixelBadge variant="yuzu" size="md">
-            MINT STRUCTURE & ALLOCATIONS
+          <PixelBadge variant="solana" size="md">
+            THE DROP ON SOLANA
           </PixelBadge>
-          <h2 className="font-pixel text-3xl sm:text-4xl font-extrabold text-ink">
+          <h2 className="text-3xl sm:text-4xl font-black text-ink">
             Baby Capy Drop Day
           </h2>
-          <p className="font-cozy text-ink/80 text-base">
-            Fair distribution on Arbitrum & Base L2 with zero gas wars and guaranteed pioneer allocations.
+          <p className="text-ink/80 text-base font-bold">
+            Fair distribution on Solana with sub-cent network fees, no gas wars, and guaranteed Pioneer allocations.
           </p>
         </div>
 
@@ -32,9 +32,9 @@ export default function MintTiersBreakdown() {
               headerBg={tier.highlight ? 'bg-yuzu' : 'bg-sand'}
               header={
                 <div className="flex items-center justify-between">
-                  <span className="font-pixel text-base font-bold text-ink">{tier.tier}</span>
+                  <span className="text-base font-black text-ink">{tier.tier}</span>
                   <PixelBadge
-                    variant={tier.highlight ? 'coral' : 'snow'}
+                    variant={tier.highlight ? 'solana' : 'snow'}
                     size="sm"
                   >
                     {tier.badge}
@@ -47,13 +47,13 @@ export default function MintTiersBreakdown() {
             >
               <div className="space-y-4">
                 <div className="space-y-1 pb-3 border-b-[2px] border-ink/10">
-                  <div className="font-pixel text-2xl font-black text-ink">{tier.price}</div>
-                  <div className="font-pixel text-xs text-ink/60 font-bold">
+                  <div className="text-2xl font-black text-ink">{tier.price}</div>
+                  <div className="text-xs text-ink/60 font-black">
                     Supply Limit: {tier.supply} Capys
                   </div>
                 </div>
 
-                <div className="flex items-start gap-2 text-xs font-cozy text-ink/80 leading-relaxed">
+                <div className="flex items-start gap-2 text-xs text-ink/80 leading-relaxed font-bold">
                   <CheckCircle2 className="w-4 h-4 text-matcha shrink-0 mt-0.5" />
                   <span>{tier.perks}</span>
                 </div>
@@ -67,7 +67,7 @@ export default function MintTiersBreakdown() {
                     className="w-full gap-1.5"
                   >
                     <Sparkles className="w-4 h-4" />
-                    Reserve Spot
+                    Reserve Solana Spot
                   </BrutalButton>
                 </Link>
               </div>

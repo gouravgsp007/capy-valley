@@ -58,14 +58,14 @@ export default function TraitCustomizer() {
   };
 
   return (
-    <div className="bg-snow p-6 sm:p-8 rounded-3xl border-[3.5px] border-ink shadow-brutal-lg max-w-4xl mx-auto">
+    <div id="traits" className="bg-snow p-6 sm:p-8 rounded-3xl border-[3.5px] border-ink shadow-brutal-lg max-w-4xl mx-auto scroll-mt-24">
       <div className="flex flex-col sm:flex-row items-center justify-between gap-4 pb-6 border-b-[2.5px] border-ink mb-6">
         <div>
-          <PixelBadge variant="yuzu" size="sm">
-            DYNAMIC COMPANION LAB
+          <PixelBadge variant="solana" size="sm">
+            SOLANA METAPLEX TRAIT LAB
           </PixelBadge>
-          <h3 className="font-pixel text-2xl font-bold text-ink mt-1">
-            Customize Your Baby Capy
+          <h3 className="text-2xl font-black text-ink mt-1">
+            Customize your Baby Capy
           </h3>
         </div>
 
@@ -86,7 +86,7 @@ export default function TraitCustomizer() {
         {/* Preview Viewport */}
         <div className="md:col-span-5 flex flex-col items-center">
           <div className="w-full aspect-square max-w-[280px] rounded-2xl bg-gradient-to-b from-onsen-light to-[#FDECC4] border-[3px] border-ink shadow-brutal flex items-center justify-center p-4 relative overflow-hidden">
-            <div className="absolute top-3 left-3 bg-snow px-2 py-0.5 rounded border border-ink font-pixel text-xs font-bold text-ink/70">
+            <div className="absolute top-3 left-3 bg-snow px-2.5 py-1 rounded-lg border border-ink text-xs font-black text-ink/70">
               Lv. 1 Sprout
             </div>
             <div className="animate-bob">
@@ -99,9 +99,9 @@ export default function TraitCustomizer() {
               />
             </div>
           </div>
-          <span className="font-pixel text-xs text-ink/60 mt-3 flex items-center gap-1 font-bold">
+          <span className="text-xs text-ink/70 mt-3 flex items-center gap-1 font-black">
             <Sparkles className="w-3.5 h-3.5 text-yuzu" />
-            Evolving on-chain metadata
+            Dynamic Solana Core Metadata
           </span>
         </div>
 
@@ -109,7 +109,7 @@ export default function TraitCustomizer() {
         <div className="md:col-span-7 space-y-5">
           {/* Headgear */}
           <div>
-            <label className="block font-pixel text-xs font-bold text-ink/70 uppercase mb-2">
+            <label className="block text-xs font-black text-ink/70 uppercase mb-2">
               Headgear & Spa Accessories:
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -120,7 +120,7 @@ export default function TraitCustomizer() {
                     sound.playBubblePop();
                     setHead(opt.id);
                   }}
-                  className={`px-3 py-2 rounded-xl font-pixel text-xs font-bold border-[2px] border-ink transition-all cursor-pointer ${
+                  className={`px-3 py-2 rounded-xl text-xs font-black border-[2px] border-ink transition-all cursor-pointer ${
                     head === opt.id
                       ? 'bg-yuzu text-ink shadow-brutal-sm -translate-y-0.5'
                       : 'bg-cream text-ink/80 hover:bg-sand/50'
@@ -134,7 +134,7 @@ export default function TraitCustomizer() {
 
           {/* Expression */}
           <div>
-            <label className="block font-pixel text-xs font-bold text-ink/70 uppercase mb-2">
+            <label className="block text-xs font-black text-ink/70 uppercase mb-2">
               Mood & Expression:
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -145,7 +145,7 @@ export default function TraitCustomizer() {
                     sound.playBubblePop();
                     setExpression(opt.id);
                   }}
-                  className={`px-3 py-2 rounded-xl font-pixel text-xs font-bold border-[2px] border-ink transition-all cursor-pointer ${
+                  className={`px-3 py-2 rounded-xl text-xs font-black border-[2px] border-ink transition-all cursor-pointer ${
                     expression === opt.id
                       ? 'bg-onsen text-white shadow-brutal-sm -translate-y-0.5'
                       : 'bg-cream text-ink/80 hover:bg-sand/50'
@@ -159,7 +159,7 @@ export default function TraitCustomizer() {
 
           {/* Body Color */}
           <div>
-            <label className="block font-pixel text-xs font-bold text-ink/70 uppercase mb-2">
+            <label className="block text-xs font-black text-ink/70 uppercase mb-2">
               Fur Coat:
             </label>
             <div className="grid grid-cols-2 gap-2">
@@ -170,7 +170,7 @@ export default function TraitCustomizer() {
                     sound.playBubblePop();
                     setBodyColor(opt.color);
                   }}
-                  className={`flex items-center gap-2 px-3 py-2 rounded-xl font-pixel text-xs font-bold border-[2px] border-ink transition-all cursor-pointer ${
+                  className={`flex items-center gap-2 px-3 py-2 rounded-xl text-xs font-black border-[2px] border-ink transition-all cursor-pointer ${
                     bodyColor === opt.color
                       ? 'bg-matcha text-white shadow-brutal-sm -translate-y-0.5'
                       : 'bg-cream text-ink/80 hover:bg-sand/50'

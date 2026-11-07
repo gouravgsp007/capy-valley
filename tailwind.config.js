@@ -12,6 +12,11 @@ module.exports = {
         cream: '#FFF9ED',
         snow: '#FFFFFF',
         sand: '#FDECC4',
+        solana: {
+          purple: '#9945FF',
+          green: '#14F195',
+          dark: '#120c18',
+        },
         capy: {
           light: '#BA8C63',
           DEFAULT: '#9A6B43',
@@ -24,8 +29,8 @@ module.exports = {
         },
         matcha: {
           light: '#E8F5E9',
-          DEFAULT: '#6B8E23',
-          dark: '#4A6B1A',
+          DEFAULT: '#588157',
+          dark: '#3A5A40',
         },
         onsen: {
           light: '#E1F5FE',
@@ -40,7 +45,9 @@ module.exports = {
         'brutal-pressed': '1px 1px 0px #2B2320',
       },
       fontFamily: {
-        pixel: ['"Pixelify Sans"', 'cursive', 'sans-serif'],
+        sans: ['"Nunito"', '-apple-system', 'BlinkMacSystemFont', 'sans-serif'],
+        display: ['"Nunito"', 'sans-serif'],
+        pixel: ['"Nunito"', 'sans-serif'], // Map pixel to clean bold Nunito for full legibility
         cozy: ['"Nunito"', 'sans-serif'],
       },
       keyframes: {

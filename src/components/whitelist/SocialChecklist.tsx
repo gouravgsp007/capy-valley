@@ -24,10 +24,10 @@ export default function SocialChecklist({ tasks, onToggleTask }: SocialChecklist
   return (
     <div className="space-y-3">
       <div className="flex items-center justify-between">
-        <label className="font-pixel text-xs font-bold text-ink/70 uppercase">
+        <label className="text-xs font-black text-ink/70 uppercase">
           Step 1: Complete Community Rituals
         </label>
-        <span className="font-pixel text-xs font-bold text-matcha">
+        <span className="text-xs font-black text-matcha">
           {tasks.filter((t) => t.completed).length} of {tasks.length} Done
         </span>
       </div>
@@ -50,10 +50,10 @@ export default function SocialChecklist({ tasks, onToggleTask }: SocialChecklist
                 <Circle className="w-5 h-5 text-ink/30 shrink-0" />
               )}
               <div>
-                <div className="font-pixel text-sm font-bold leading-tight">
+                <div className="text-sm font-black leading-tight">
                   {task.label}
                 </div>
-                <div className="font-cozy text-xs text-ink/70">
+                <div className="text-xs text-ink/70 font-bold">
                   {task.description}
                 </div>
               </div>

@@ -28,7 +28,7 @@ export default function AtmosphereGlow({ mode, onChange }: AtmosphereGlowProps) 
               sound.playBubblePop();
               onChange(m.id);
             }}
-            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg font-pixel text-xs font-bold transition-all cursor-pointer select-none ${
+            className={`flex items-center gap-1.5 px-2.5 py-1 rounded-lg text-xs font-black transition-all cursor-pointer select-none ${
               isSelected
                 ? 'bg-yuzu text-ink border-[2px] border-ink shadow-brutal-sm'
                 : 'text-ink/60 hover:text-ink hover:bg-sand/40'

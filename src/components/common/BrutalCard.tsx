@@ -35,7 +35,7 @@ export default function BrutalCard({
       } ${className}`}
     >
       {header && (
-        <div className={`px-5 py-3 border-b-[3px] border-ink font-pixel font-bold text-ink ${headerBg}`}>
+        <div className={`px-5 py-3 border-b-[3px] border-ink font-black text-ink ${headerBg}`}>
           {header}
         </div>
       )}

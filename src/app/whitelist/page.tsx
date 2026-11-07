@@ -14,15 +14,15 @@ export default function WhitelistPage() {
   const [tasks, setTasks] = useState<SocialTask[]>([
     {
       id: 'follow-x',
-      label: 'Follow @CapyValleyGame on 𝕏',
-      description: 'Get live announcements, patch notes, and drop dates.',
+      label: 'Follow @CapyValleySol on 𝕏',
+      description: 'Get live Solana announcements, drop dates, and patch notes.',
       link: 'https://x.com',
       completed: false,
       type: 'x-follow',
     },
     {
       id: 'repost-announcement',
-      label: 'Repost the Whitelist Trailer',
+      label: 'Repost the Solana Whitelist Announcement',
       description: 'Spread the cozy onsen vibes with your mutuals.',
       link: 'https://x.com',
       completed: false,
@@ -31,7 +31,7 @@ export default function WhitelistPage() {
     {
       id: 'join-community',
       label: 'Join Hot Springs Telegram & Discord',
-      description: 'Meet fellow valley pioneers and claim the role.',
+      description: 'Meet fellow Solana valley pioneers and claim early roles.',
       link: 'https://t.me',
       completed: false,
       type: 'telegram',
@@ -54,14 +54,14 @@ export default function WhitelistPage() {
       <div className="max-w-7xl mx-auto space-y-12">
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto space-y-4">
-          <PixelBadge variant="yuzu" size="md">
-            EARLY PIONEER ACCESS
+          <PixelBadge variant="solana" size="md">
+            SOLANA PIONEER ACCESS
           </PixelBadge>
-          <h1 className="font-pixel text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ink leading-tight">
+          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-ink leading-tight">
             Earn your Lil Capy spot in three minutes.
           </h1>
-          <p className="font-cozy text-lg text-ink/80 leading-relaxed">
-            Guaranteed Pioneer mint allocation, dynamic trait boosts, and zero gas wars on Arbitrum & Base.
+          <p className="text-lg text-ink/80 leading-relaxed font-bold">
+            Guaranteed Pioneer mint allocation on Solana with sub-cent network fees, no gas wars, and dynamic on-chain metadata evolution.
           </p>
         </div>
 
@@ -76,11 +76,11 @@ export default function WhitelistPage() {
             <div className="flex items-center justify-between pb-4 border-b-[2.5px] border-ink">
               <div className="flex items-center gap-2">
                 <Sparkles className="w-5 h-5 text-yuzu-gold" />
-                <h3 className="font-pixel text-xl font-bold text-ink">
-                  Pioneer Whitelist Application
+                <h3 className="text-xl font-black text-ink">
+                  Solana Pioneer Whitelist
                 </h3>
               </div>
-              <span className="font-pixel text-xs font-bold text-matcha bg-sand px-2.5 py-1 rounded border border-ink flex items-center gap-1">
+              <span className="text-xs font-black text-matcha bg-sand px-2.5 py-1 rounded-lg border border-ink flex items-center gap-1">
                 <ShieldCheck className="w-3.5 h-3.5" />
                 1,200 Spots Left
               </span>
@@ -91,8 +91,8 @@ export default function WhitelistPage() {
 
             {/* Step 2: Wallet Submission */}
             <div className="space-y-3 pt-2 border-t-[2.5px] border-ink/10">
-              <label className="font-pixel text-xs font-bold text-ink/70 uppercase block">
-                Step 2: Submit EVM Wallet
+              <label className="text-xs font-black text-ink/70 uppercase block">
+                Step 2: Submit Solana Public Key
               </label>
               <WalletForm
                 tasksCompleted={allTasksCompleted}

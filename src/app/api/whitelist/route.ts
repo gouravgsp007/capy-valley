@@ -1,12 +1,12 @@
 import { NextRequest, NextResponse } from 'next/server';
-import { isValidEvmAddress, sanitizeHandle } from '@/lib/evm';
+import { isValidSolanaAddress, sanitizeHandle } from '@/lib/solana';
 import { WhitelistEntry } from '@/lib/types';
 
 // In-memory backing store for the mock API
 const inMemoryStore: WhitelistEntry[] = [
   {
     id: 'entry-seed-1',
-    walletAddress: '0x71C7656EC7ab88b098defB751B7401B5f6d8976F',
+    walletAddress: '7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU',
     xHandle: 'onsen_enjoyer',
     proofUrl: 'https://x.com/onsen_enjoyer/status/189201',
     timestamp: Date.now() - 1000 * 60 * 15,
@@ -15,7 +15,7 @@ const inMemoryStore: WhitelistEntry[] = [
   },
   {
     id: 'entry-seed-2',
-    walletAddress: '0x3cD26715f2316e6d7aF45437943E198A843510A5',
+    walletAddress: '8nB3Vq2w8eY47TXJSDpbD5jBkheTqA83TZRuJosgAsU',
     xHandle: 'capy_king99',
     proofUrl: 'https://x.com/capy_king99/status/189202',
     timestamp: Date.now() - 1000 * 60 * 30,
@@ -24,7 +24,7 @@ const inMemoryStore: WhitelistEntry[] = [
   },
   {
     id: 'entry-seed-3',
-    walletAddress: '0x88B3b3554A1F6cD37265330e700A0A5e96a41334',
+    walletAddress: '9mC4Wq3w9eZ58UXKTFqcE6kClifUrB94UASvKptkBtV',
     xHandle: 'chill_farmer',
     proofUrl: 'https://x.com/chill_farmer/status/189203',
     timestamp: Date.now() - 1000 * 60 * 65,
@@ -38,7 +38,7 @@ export async function GET(req: NextRequest) {
   const format = searchParams.get('format');
 
   if (format === 'csv') {
-    const csvHeader = 'PioneerID,WalletAddress,XHandle,Tier,Date\n';
+    const csvHeader = 'PioneerID,SolanaAddress,XHandle,Tier,Date\n';
     const csvRows = inMemoryStore.map(
       (e) => `${e.pioneerId},"${e.walletAddress}","@${e.xHandle}","${e.tier}","${new Date(e.timestamp).toISOString()}"`
     );
@@ -48,14 +48,14 @@ export async function GET(req: NextRequest) {
       status: 200,
       headers: {
         'Content-Type': 'text/csv',
-        'Content-Disposition': 'attachment; filename="capy-valley-whitelist.csv"',
+        'Content-Disposition': 'attachment; filename="capy-valley-solana-whitelist.csv"',
       },
     });
   }
 
   return NextResponse.json({
     success: true,
-    totalCount: inMemoryStore.length + 417, // Total simulated pioneers
+    totalCount: inMemoryStore.length + 417,
     recentEntries: inMemoryStore.slice(0, 10),
   });
 }
@@ -65,9 +65,9 @@ export async function POST(req: NextRequest) {
     const body = await req.json();
     const { walletAddress, xHandle, proofUrl } = body;
 
-    if (!walletAddress || !isValidEvmAddress(walletAddress)) {
+    if (!walletAddress || !isValidSolanaAddress(walletAddress)) {
       return NextResponse.json(
-        { success: false, error: 'Invalid EVM wallet address. Must start with 0x and have 40 hex characters.' },
+        { success: false, error: 'Invalid Solana address. Must be a valid Base58 public key (e.g. from Phantom, Solflare, or Backpack).' },
         { status: 400 }
       );
     }
@@ -87,7 +87,7 @@ export async function POST(req: NextRequest) {
 
     if (exists) {
       return NextResponse.json(
-        { success: false, error: 'This wallet address is already registered on the whitelist!' },
+        { success: false, error: 'This Solana wallet address is already registered on the whitelist!' },
         { status: 409 }
       );
     }
@@ -108,7 +108,7 @@ export async function POST(req: NextRequest) {
     return NextResponse.json({
       success: true,
       entry: newEntry,
-      message: 'Successfully enrolled into Capy Valley Pioneer Whitelist!',
+      message: 'Successfully enrolled into Capy Valley Solana Pioneer Whitelist!',
     });
   } catch {
     return NextResponse.json(

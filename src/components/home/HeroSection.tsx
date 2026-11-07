@@ -7,7 +7,7 @@ import PixelBadge from '../common/PixelBadge';
 import CapyPixelRenderer from '../canvas/CapyPixelRenderer';
 import AtmosphereGlow from './AtmosphereGlow';
 import { AtmosphereMode } from '@/lib/types';
-import { Sparkles, ArrowRight, Heart } from 'lucide-react';
+import { Sparkles, ArrowRight, Heart, Zap } from 'lucide-react';
 
 interface HeroSectionProps {
   atmosphere: AtmosphereMode;
@@ -16,13 +16,13 @@ interface HeroSectionProps {
 
 export default function HeroSection({ atmosphere, onAtmosphereChange }: HeroSectionProps) {
   return (
-    <section className="relative pt-8 pb-16 px-4 lg:px-8 overflow-hidden">
+    <section id="valley" className="relative pt-8 pb-16 px-4 lg:px-8 overflow-hidden">
       <div className="max-w-7xl mx-auto">
         {/* Top Announcement Bar & Glow Selector */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mb-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-snow border-[2px] border-ink shadow-brutal-sm text-xs font-pixel font-bold">
-            <span className="w-2 h-2 rounded-full bg-yuzu animate-ping" />
-            <span className="text-ink">PIONEER WHITELIST NOW LIVE</span>
+          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-snow border-[2px] border-ink shadow-brutal-sm text-xs font-bold">
+            <span className="w-2 h-2 rounded-full bg-solana-green animate-ping" />
+            <span className="text-ink">SOLANA PIONEER WHITELIST IS LIVE</span>
             <span className="text-ink/40">•</span>
             <span className="text-matcha font-extrabold">1,200 FREE GTD SPOTS</span>
           </div>
@@ -35,19 +35,19 @@ export default function HeroSection({ atmosphere, onAtmosphereChange }: HeroSect
           {/* Left Column: Copy & CTAs */}
           <div className="lg:col-span-7 space-y-6">
             <div className="inline-block">
-              <PixelBadge variant="onsen" size="sm">
-                ♨️ L2 IDLE ON-CHAIN GAMING
+              <PixelBadge variant="solana" size="sm">
+                ⚡ SOLANA IDLE ON-CHAIN GAMING
               </PixelBadge>
             </div>
 
-            <h1 className="font-pixel text-4xl sm:text-5xl lg:text-6xl font-extrabold text-ink leading-[1.08] tracking-tight">
+            <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-ink leading-[1.08] tracking-tight">
               Raise Capys. <br />
-              Grow the Valley. <br />
+              Grow the valley. <br />
               Harvest <span className="bg-yuzu px-2 py-0.5 rounded-lg border-[3px] border-ink shadow-brutal-sm inline-block rotate-1">$CAPY</span>.
             </h1>
 
-            <p className="font-cozy text-lg sm:text-xl text-ink/80 leading-relaxed max-w-xl">
-              A cozy idle game where your Capybaras run the hillside groves. Play a few minutes a day, earn a share of a public reward vault, and watch your Baby Capy grow up into a Grand Elder.
+            <p className="text-lg sm:text-xl text-ink/80 leading-relaxed max-w-xl font-bold">
+              A cozy idle farm on Solana where your Capybaras run the hillside groves. Play a few minutes a day, earn your share of a community public reward vault, and watch your Baby Capy grow with instant, sub-cent Solana transactions.
             </p>
 
             {/* CTAs */}
@@ -55,7 +55,7 @@ export default function HeroSection({ atmosphere, onAtmosphereChange }: HeroSect
               <Link href="/whitelist">
                 <BrutalButton variant="primary" size="lg" soundType="success" className="gap-2">
                   <Sparkles className="w-5 h-5" />
-                  Join The Whitelist
+                  Join Solana Whitelist
                   <ArrowRight className="w-5 h-5 ml-1" />
                 </BrutalButton>
               </Link>
@@ -69,16 +69,18 @@ export default function HeroSection({ atmosphere, onAtmosphereChange }: HeroSect
             {/* Quick Metrics */}
             <div className="grid grid-cols-3 gap-3 pt-6 border-t-[2.5px] border-ink/15 max-w-lg">
               <div className="p-3 bg-snow rounded-xl border-[2px] border-ink shadow-brutal-sm">
-                <div className="font-pixel text-xs text-ink/60 font-bold uppercase">Public Vault</div>
-                <div className="font-pixel text-lg sm:text-xl font-extrabold text-ink">5.4M $CAPY</div>
+                <div className="text-xs text-ink/60 font-bold uppercase">Public Vault</div>
+                <div className="text-lg sm:text-xl font-black text-ink">5.4M $CAPY</div>
               </div>
               <div className="p-3 bg-snow rounded-xl border-[2px] border-ink shadow-brutal-sm">
-                <div className="font-pixel text-xs text-ink/60 font-bold uppercase">Time / Day</div>
-                <div className="font-pixel text-lg sm:text-xl font-extrabold text-matcha">3 - 5 Mins</div>
+                <div className="text-xs text-ink/60 font-bold uppercase">Solana Speed</div>
+                <div className="text-lg sm:text-xl font-black text-solana-purple flex items-center gap-1">
+                  <Zap className="w-4 h-4" /> 400ms
+                </div>
               </div>
               <div className="p-3 bg-snow rounded-xl border-[2px] border-ink shadow-brutal-sm">
-                <div className="font-pixel text-xs text-ink/60 font-bold uppercase">Max Multiplier</div>
-                <div className="font-pixel text-lg sm:text-xl font-extrabold text-[#F77F00]">2.20x Yield</div>
+                <div className="text-xs text-ink/60 font-bold uppercase">Max Multiplier</div>
+                <div className="text-lg sm:text-xl font-black text-[#F77F00]">2.20x Yield</div>
               </div>
             </div>
           </div>
@@ -91,21 +93,21 @@ export default function HeroSection({ atmosphere, onAtmosphereChange }: HeroSect
                 <div className="flex items-center gap-2">
                   <span className="w-3 h-3 rounded-full bg-[#E74C3C] border border-ink" />
                   <span className="w-3 h-3 rounded-full bg-yuzu border border-ink" />
-                  <span className="w-3 h-3 rounded-full bg-[#2ED573] border border-ink" />
-                  <span className="font-pixel text-xs font-bold text-ink/70 ml-2">HOT SPRINGS GROVE #01</span>
+                  <span className="w-3 h-3 rounded-full bg-solana-green border border-ink" />
+                  <span className="text-xs font-black text-ink/70 ml-2">SOLANA ONSEN GROVE #01</span>
                 </div>
-                <span className="font-pixel text-xs font-bold px-2 py-0.5 rounded bg-sand border border-ink">
-                  LIVE SIM
+                <span className="text-xs font-black px-2 py-0.5 rounded bg-sand border border-ink">
+                  SOLANA CORE
                 </span>
               </div>
 
               {/* Pixel Diorama Scene */}
               <div className="relative rounded-2xl bg-gradient-to-b from-onsen-light via-[#FDECC4] to-[#C8D6AF] p-8 border-[2.5px] border-ink overflow-hidden flex flex-col items-center justify-center min-h-[300px]">
                 {/* Floating Onsen Leaves and steam */}
-                <div className="absolute top-3 left-4 font-pixel text-xs font-bold text-ink/70 bg-snow/80 px-2 py-1 rounded border border-ink">
+                <div className="absolute top-3 left-4 text-xs font-bold text-ink/70 bg-snow/80 px-2 py-1 rounded border border-ink">
                   ♨️ 41°C Onsen
                 </div>
-                <div className="absolute top-3 right-4 font-pixel text-xs font-bold text-[#E67E22] bg-snow/80 px-2 py-1 rounded border border-ink flex items-center gap-1">
+                <div className="absolute top-3 right-4 text-xs font-bold text-[#E67E22] bg-snow/80 px-2 py-1 rounded border border-ink flex items-center gap-1">
                   <Heart className="w-3 h-3 fill-[#E67E22]" /> Happiness 100%
                 </div>
 
@@ -121,16 +123,16 @@ export default function HeroSection({ atmosphere, onAtmosphereChange }: HeroSect
                 </div>
 
                 {/* Floating Leaf / Harvest notification */}
-                <div className="absolute bottom-3 bg-snow px-3.5 py-1.5 rounded-xl border-[2px] border-ink shadow-brutal-sm font-pixel text-xs font-bold text-ink flex items-center gap-2">
+                <div className="absolute bottom-3 bg-snow px-3.5 py-1.5 rounded-xl border-[2px] border-ink shadow-brutal-sm text-xs font-black text-ink flex items-center gap-2">
                   <span>🍊 Yuzu Harvested:</span>
-                  <span className="text-matcha font-extrabold">+142 $CAPY/hr</span>
+                  <span className="text-matcha font-black">+142 $CAPY/hr</span>
                 </div>
               </div>
 
               {/* Diorama Footer Info */}
-              <div className="mt-4 pt-3 flex items-center justify-between font-pixel text-xs font-bold text-ink/80">
+              <div className="mt-4 pt-3 flex items-center justify-between text-xs font-bold text-ink/80">
                 <span>Keeper: Grand Elder Capy</span>
-                <span className="text-onsen-deep">Offline: 24h Active</span>
+                <span className="text-solana-purple font-black">Solana Rent: Exempt</span>
               </div>
             </div>
           </div>

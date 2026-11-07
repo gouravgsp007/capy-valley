@@ -1,12 +1,12 @@
 import { WhitelistEntry } from './types';
 
-const STORAGE_KEY = 'capy_whitelist_entries';
+const STORAGE_KEY = 'capy_whitelist_entries_solana';
 
-// Initial mock entries for the live leaderboard
+// Initial mock entries for the live Solana leaderboard
 const INITIAL_ENTRIES: WhitelistEntry[] = [
   {
     id: 'entry-1',
-    walletAddress: '0x71C7656EC7ab88b098defB751B7401B5f6d8976F',
+    walletAddress: '7xKXtg2CW87d97TXJSDpbD5jBkheTqA83TZRuJosgAsU',
     xHandle: 'onsen_enjoyer',
     proofUrl: 'https://x.com/onsen_enjoyer/status/189201',
     timestamp: Date.now() - 1000 * 60 * 12,
@@ -15,7 +15,7 @@ const INITIAL_ENTRIES: WhitelistEntry[] = [
   },
   {
     id: 'entry-2',
-    walletAddress: '0x3cD26715f2316e6d7aF45437943E198A843510A5',
+    walletAddress: '8nB3Vq2w8eY47TXJSDpbD5jBkheTqA83TZRuJosgAsU',
     xHandle: 'capy_king99',
     proofUrl: 'https://x.com/capy_king99/status/189202',
     timestamp: Date.now() - 1000 * 60 * 35,
@@ -24,7 +24,7 @@ const INITIAL_ENTRIES: WhitelistEntry[] = [
   },
   {
     id: 'entry-3',
-    walletAddress: '0x88B3b3554A1F6cD37265330e700A0A5e96a41334',
+    walletAddress: '9mC4Wq3w9eZ58UXKTFqcE6kClifUrB94UASvKptkBtV',
     xHandle: 'chill_farmer',
     proofUrl: 'https://x.com/chill_farmer/status/189203',
     timestamp: Date.now() - 1000 * 60 * 78,
@@ -83,7 +83,7 @@ export function saveEntry(entry: Omit<WhitelistEntry, 'id' | 'timestamp' | 'pion
 }
 
 export function exportToCsv(entries: WhitelistEntry[]): string {
-  const header = 'PioneerID,WalletAddress,XHandle,Tier,Timestamp\n';
+  const header = 'PioneerID,SolanaWallet,XHandle,Tier,Timestamp\n';
   const rows = entries.map(
     (e) => `${e.pioneerId},"${e.walletAddress}","@${e.xHandle}","${e.tier}","${new Date(e.timestamp).toISOString()}"`
   );
