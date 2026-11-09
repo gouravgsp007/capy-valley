@@ -8,6 +8,7 @@ import VaultStatsPreview from '@/components/home/VaultStatsPreview';
 import RoadmapTimeline from '@/components/home/RoadmapTimeline';
 import FaqAccordion from '@/components/home/FaqAccordion';
 import AtmosphereCanvas from '@/components/canvas/AtmosphereCanvas';
+import AdSlot from '@/components/ads/AdSlot';
 import { AtmosphereMode } from '@/lib/types';
 
 export default function HomePage() {
@@ -26,6 +27,9 @@ export default function HomePage() {
       <GameLoopSection />
       <FarmPowerCalculator />
       <VaultStatsPreview />
+      <div className="max-w-6xl mx-auto px-4">
+        <AdSlot slotId="capy-home-mid-banner" />
+      </div>
       <RoadmapTimeline />
       <FaqAccordion />
     </div>

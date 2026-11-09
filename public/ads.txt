@@ -1,0 +1,3 @@
+# Google AdSense ads.txt
+# Update with your actual publisher ID in your Google AdSense Dashboard (Settings -> Account information)
+google.com, pub-XXXXXXXXXXXXXXXX, DIRECT, f08c47fec0942fa0

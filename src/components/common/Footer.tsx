@@ -9,9 +9,9 @@ export default function Footer() {
   return (
     <footer className="w-full bg-[#F5ECD7] border-t-[3px] border-ink mt-20 pt-12 pb-8 px-4 lg:px-8">
       <div className="max-w-7xl mx-auto">
-        <div className="grid grid-cols-1 md:grid-cols-4 gap-8 mb-12">
+        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 mb-12">
           {/* Col 1: Bio */}
-          <div className="md:col-span-2 space-y-4">
+          <div className="lg:col-span-2 space-y-4">
             <div className="flex items-center gap-2.5">
               <span className="text-2xl">♨️</span>
               <span className="text-2xl font-black text-ink">Capy Valley</span>
@@ -62,10 +62,43 @@ export default function Footer() {
             </ul>
           </div>
 
-          {/* Col 3: Social & Community */}
+          {/* Col 3: Compliance & Legal (Google AdSense Required) */}
           <div>
             <h4 className="text-sm font-black text-ink uppercase tracking-wider mb-3">
-              Hot Springs Lounge
+              Legal & Trust
+            </h4>
+            <ul className="space-y-2 text-sm font-black text-ink/80">
+              <li>
+                <Link href="/privacy-policy" className="hover:text-matcha transition-colors">
+                  Privacy Policy
+                </Link>
+              </li>
+              <li>
+                <Link href="/terms" className="hover:text-matcha transition-colors">
+                  Terms of Service
+                </Link>
+              </li>
+              <li>
+                <Link href="/contact" className="hover:text-matcha transition-colors">
+                  Contact & Support
+                </Link>
+              </li>
+              <li>
+                <a
+                  href="/ads.txt"
+                  target="_blank"
+                  className="hover:text-matcha transition-colors text-xs text-ink/60"
+                >
+                  ads.txt specification
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Col 4: Official Creator */}
+          <div>
+            <h4 className="text-sm font-black text-ink uppercase tracking-wider mb-3">
+              Community Lead
             </h4>
             <ul className="space-y-2 text-sm font-black text-ink/80">
               <li>
@@ -75,28 +108,23 @@ export default function Footer() {
                   rel="noreferrer"
                   className="hover:text-matcha transition-colors flex items-center gap-1.5"
                 >
-                  <span>𝕏</span> Follow {SITE_METADATA.twitter}
+                  <span>𝕏</span> Follow @{SITE_METADATA.twitterHandle}
                 </a>
               </li>
               <li>
                 <a
-                  href={SITE_METADATA.discord}
+                  href={SITE_METADATA.twitterUrl}
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-matcha transition-colors flex items-center gap-1.5"
                 >
-                  <span>💬</span> Discord Community
+                  <span>📢</span> Announcement Tweet
                 </a>
               </li>
               <li>
-                <a
-                  href={SITE_METADATA.telegram}
-                  target="_blank"
-                  rel="noreferrer"
-                  className="hover:text-matcha transition-colors flex items-center gap-1.5"
-                >
-                  <span>✈️</span> Telegram Lounge
-                </a>
+                <Link href="/whitelist" className="hover:text-matcha transition-colors flex items-center gap-1.5 text-solana-purple">
+                  <span>✨</span> Join Solana Whitelist
+                </Link>
               </li>
             </ul>
           </div>

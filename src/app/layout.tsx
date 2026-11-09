@@ -3,6 +3,8 @@ import '@/styles/globals.css';
 import Navbar from '@/components/common/Navbar';
 import Footer from '@/components/common/Footer';
 import FloatingTwitterPill from '@/components/common/FloatingTwitterPill';
+import CookieConsent from '@/components/common/CookieConsent';
+import GoogleAdSense from '@/components/ads/GoogleAdSense';
 import { SITE_METADATA } from '@/lib/constants';
 
 export const metadata: Metadata = {
@@ -20,11 +22,15 @@ export default function RootLayout({
 }) {
   return (
     <html lang="en">
+      <head>
+        <GoogleAdSense />
+      </head>
       <body className="min-h-screen flex flex-col justify-between selection:bg-yuzu selection:text-ink">
         <Navbar />
         <main className="flex-1 relative z-10">{children}</main>
         <Footer />
         <FloatingTwitterPill />
+        <CookieConsent />
       </body>
     </html>
   );

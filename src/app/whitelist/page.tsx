@@ -7,6 +7,7 @@ import WalletForm from '@/components/whitelist/WalletForm';
 import PioneerPassportCard from '@/components/whitelist/PioneerPassportCard';
 import WhitelistLeaderboard from '@/components/whitelist/WhitelistLeaderboard';
 import AtmosphereCanvas from '@/components/canvas/AtmosphereCanvas';
+import AdSlot from '@/components/ads/AdSlot';
 import { SocialTask, WhitelistEntry } from '@/lib/types';
 import { SITE_METADATA } from '@/lib/constants';
 import { Sparkles, ShieldCheck } from 'lucide-react';
@@ -97,6 +98,11 @@ export default function WhitelistPage() {
 
         {/* Live Dynamic Solana Pioneer Leaderboard */}
         <WhitelistLeaderboard />
+
+        {/* AdSense Compliance Slot */}
+        <div className="max-w-4xl mx-auto">
+          <AdSlot slotId="capy-whitelist-footer-banner" />
+        </div>
       </div>
     </div>
   );
