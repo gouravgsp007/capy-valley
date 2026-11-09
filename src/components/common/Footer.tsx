@@ -70,12 +70,12 @@ export default function Footer() {
             <ul className="space-y-2 text-sm font-black text-ink/80">
               <li>
                 <a
-                  href="https://x.com"
+                  href={SITE_METADATA.twitterFollowIntent}
                   target="_blank"
                   rel="noreferrer"
                   className="hover:text-matcha transition-colors flex items-center gap-1.5"
                 >
-                  <span>𝕏</span> {SITE_METADATA.twitter}
+                  <span>𝕏</span> Follow {SITE_METADATA.twitter}
                 </a>
               </li>
               <li>

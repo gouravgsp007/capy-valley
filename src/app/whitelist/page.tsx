@@ -8,30 +8,31 @@ import PioneerPassportCard from '@/components/whitelist/PioneerPassportCard';
 import WhitelistLeaderboard from '@/components/whitelist/WhitelistLeaderboard';
 import AtmosphereCanvas from '@/components/canvas/AtmosphereCanvas';
 import { SocialTask, WhitelistEntry } from '@/lib/types';
+import { SITE_METADATA } from '@/lib/constants';
 import { Sparkles, ShieldCheck } from 'lucide-react';
 
 export default function WhitelistPage() {
   const [tasks, setTasks] = useState<SocialTask[]>([
     {
       id: 'follow-x',
-      label: 'Follow @CapyValleySol on 𝕏',
-      description: 'Get live Solana announcements, drop dates, and patch notes.',
-      link: 'https://x.com',
+      label: `Follow @${SITE_METADATA.twitterHandle} on 𝕏`,
+      description: 'Mandatory: Opens official 1-click Twitter follow intent to unlock GTD spot.',
+      link: SITE_METADATA.twitterFollowIntent,
       completed: false,
       type: 'x-follow',
     },
     {
       id: 'repost-announcement',
-      label: 'Repost the Solana Whitelist Announcement',
-      description: 'Spread the cozy onsen vibes with your mutuals.',
-      link: 'https://x.com',
+      label: `Repost @${SITE_METADATA.twitterHandle}'s Solana Announcement`,
+      description: 'Spread the cozy onsen vibes and boost your wallet priority.',
+      link: `https://x.com/${SITE_METADATA.twitterHandle}`,
       completed: false,
       type: 'x-repost',
     },
     {
       id: 'join-community',
       label: 'Join Hot Springs Telegram & Discord',
-      description: 'Meet fellow Solana valley pioneers and claim early roles.',
+      description: 'Meet fellow Solana valley pioneers and claim early holder roles.',
       link: 'https://t.me',
       completed: false,
       type: 'telegram',
@@ -61,7 +62,7 @@ export default function WhitelistPage() {
             Earn your Lil Capy spot in three minutes.
           </h1>
           <p className="text-lg text-ink/80 leading-relaxed font-bold">
-            Guaranteed Pioneer mint allocation on Solana with sub-cent network fees, no gas wars, and dynamic on-chain metadata evolution.
+            Follow <a href={SITE_METADATA.twitterFollowIntent} target="_blank" rel="noreferrer" className="underline decoration-solana-purple decoration-[3px] text-ink hover:text-solana-purple">@{SITE_METADATA.twitterHandle} on 𝕏</a> for guaranteed Pioneer mint allocation on Solana with sub-cent network fees and zero gas wars.
           </p>
         </div>
 

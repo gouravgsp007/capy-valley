@@ -5,7 +5,8 @@ import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import AudioController from './AudioController';
 import BrutalButton from './BrutalButton';
-import { Sparkles, Menu, X } from 'lucide-react';
+import { SITE_METADATA } from '@/lib/constants';
+import { Sparkles, Menu, X, ExternalLink } from 'lucide-react';
 import { sound } from '@/lib/audio';
 
 export default function Navbar() {
@@ -47,7 +48,7 @@ export default function Navbar() {
               Capy Valley
             </span>
             <span className="text-[10px] sm:text-[11px] font-black uppercase text-matcha tracking-widest block mt-0.5">
-              on Solana
+              by @{SITE_METADATA.twitterHandle}
             </span>
           </div>
         </Link>
@@ -75,6 +76,18 @@ export default function Navbar() {
         {/* Right Action Cluster */}
         <div className="flex items-center gap-2 sm:gap-3">
           <AudioController />
+
+          {/* Follow on 𝕏 Button */}
+          <a
+            href={SITE_METADATA.twitterFollowIntent}
+            target="_blank"
+            rel="noreferrer"
+            className="hidden lg:inline-flex items-center gap-1.5 px-3 py-1.5 rounded-xl border-[2.5px] border-ink bg-snow hover:bg-sand text-ink text-xs font-black shadow-brutal-sm transition-all"
+          >
+            <span>𝕏</span>
+            <span>Follow @{SITE_METADATA.twitterHandle}</span>
+            <ExternalLink className="w-3 h-3 text-ink/60" />
+          </a>
           
           <Link href="/whitelist" className="hidden sm:inline-flex">
             <BrutalButton variant="primary" size="sm">
@@ -107,6 +120,18 @@ export default function Navbar() {
               {link.label}
             </Link>
           ))}
+
+          <a
+            href={SITE_METADATA.twitterFollowIntent}
+            target="_blank"
+            rel="noreferrer"
+            className="px-4 py-2.5 rounded-xl font-black text-base text-white bg-solana-purple flex items-center justify-between border-[2px] border-ink shadow-brutal-sm"
+          >
+            <span className="flex items-center gap-2">
+              <span>𝕏</span> Follow @{SITE_METADATA.twitterHandle}
+            </span>
+            <ExternalLink className="w-4 h-4" />
+          </a>
 
           <div className="pt-2 sm:hidden">
             <Link href="/whitelist" onClick={closeMenu} className="block w-full">

@@ -7,7 +7,8 @@ import PixelBadge from '../common/PixelBadge';
 import CapyPixelRenderer from '../canvas/CapyPixelRenderer';
 import AtmosphereGlow from './AtmosphereGlow';
 import { AtmosphereMode } from '@/lib/types';
-import { Sparkles, ArrowRight, Heart, Zap } from 'lucide-react';
+import { SITE_METADATA } from '@/lib/constants';
+import { Sparkles, ArrowRight, Heart, Zap, ExternalLink } from 'lucide-react';
 
 interface HeroSectionProps {
   atmosphere: AtmosphereMode;
@@ -20,12 +21,19 @@ export default function HeroSection({ atmosphere, onAtmosphereChange }: HeroSect
       <div className="max-w-7xl mx-auto">
         {/* Top Announcement Bar & Glow Selector */}
         <div className="flex flex-col sm:flex-row items-center justify-between gap-3 mb-8">
-          <div className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-snow border-[2px] border-ink shadow-brutal-sm text-xs font-bold">
+          <a
+            href={SITE_METADATA.twitterFollowIntent}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-flex items-center gap-2 px-3.5 py-1.5 rounded-full bg-snow border-[2px] border-ink shadow-brutal-sm text-xs font-bold hover:bg-sand transition-colors cursor-pointer"
+          >
             <span className="w-2 h-2 rounded-full bg-solana-green animate-ping" />
-            <span className="text-ink">SOLANA PIONEER WHITELIST IS LIVE</span>
+            <span className="text-ink">FOLLOW @{SITE_METADATA.twitterHandle} ON 𝕏</span>
             <span className="text-ink/40">•</span>
-            <span className="text-matcha font-extrabold">1,200 FREE GTD SPOTS</span>
-          </div>
+            <span className="text-matcha font-extrabold flex items-center gap-1">
+              1,200 FREE GTD SPOTS <ExternalLink className="w-3 h-3" />
+            </span>
+          </a>
 
           <AtmosphereGlow mode={atmosphere} onChange={onAtmosphereChange} />
         </div>
@@ -51,7 +59,7 @@ export default function HeroSection({ atmosphere, onAtmosphereChange }: HeroSect
             </p>
 
             {/* CTAs */}
-            <div className="flex flex-wrap items-center gap-4 pt-2">
+            <div className="flex flex-wrap items-center gap-3 pt-2">
               <Link href="/whitelist">
                 <BrutalButton variant="primary" size="lg" soundType="success" className="gap-2">
                   <Sparkles className="w-5 h-5" />
@@ -59,9 +67,19 @@ export default function HeroSection({ atmosphere, onAtmosphereChange }: HeroSect
                   <ArrowRight className="w-5 h-5 ml-1" />
                 </BrutalButton>
               </Link>
+              <a
+                href={SITE_METADATA.twitterFollowIntent}
+                target="_blank"
+                rel="noreferrer"
+              >
+                <BrutalButton variant="secondary" size="lg" soundType="chime" className="gap-2">
+                  <span className="text-lg">𝕏</span>
+                  Follow @{SITE_METADATA.twitterHandle}
+                </BrutalButton>
+              </a>
               <Link href="/capys">
                 <BrutalButton variant="outline" size="lg" soundType="pop">
-                  Meet The Capys 🍊
+                  Meet Capys 🍊
                 </BrutalButton>
               </Link>
             </div>

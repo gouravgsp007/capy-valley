@@ -2,10 +2,13 @@ import { FaqItem, GrowthStageInfo, RoadmapMilestone } from './types';
 
 export const SITE_METADATA = {
   title: 'Capy Valley: Cozy Idle Onsen & Farm on Solana',
-  description: 'Relax with chill Capybaras, harvest golden yuzu, and earn $CAPY from a public Solana community reward vault. An idle Web3 clicker built on Solana for lightning speed and sub-cent fees.',
+  description: 'Relax with chill Capybaras, harvest golden yuzu, and earn $CAPY from a public Solana community reward vault. Follow @shreyahunt for drop updates and guaranteed Pioneer whitelist access.',
   token: '$CAPY',
   chain: 'Solana',
-  twitter: '@CapyValleySol',
+  twitterHandle: 'shreyahunt',
+  twitter: '@shreyahunt',
+  twitterUrl: 'https://x.com/shreyahunt',
+  twitterFollowIntent: 'https://x.com/intent/follow?screen_name=shreyahunt',
   discord: 'https://discord.gg/capyvalleysol',
   telegram: 'https://t.me/capyvalleysol',
 };
@@ -50,7 +53,7 @@ export const DROP_TIERS = [
     tier: 'Early Pioneers (GTD)',
     supply: '1,200',
     price: 'Free Claim (Solana rent only)',
-    perks: 'Guaranteed Baby Capy Solana NFT, Exclusive "Zen Onsen Master" trait, +25% permanent Farm Power boost.',
+    perks: 'Guaranteed Baby Capy Solana NFT, Exclusive "Zen Onsen Master" trait, +25% permanent Farm Power boost for @shreyahunt followers.',
     badge: 'Guaranteed',
     highlight: true,
   },
@@ -75,8 +78,8 @@ export const DROP_TIERS = [
 export const ROADMAP_ITEMS: RoadmapMilestone[] = [
   {
     quarter: 'Phase 1: Genesis Bath',
-    title: 'Solana Whitelist & Community',
-    desc: 'Launch of Capy Valley showcase, Solana Pioneer Whitelist campaign, Anchor program audits, and pixel art reveals.',
+    title: 'Solana Whitelist & @shreyahunt Community',
+    desc: 'Launch of Capy Valley showcase, official @shreyahunt follower whitelist campaign, Anchor program audits, and pixel art reveals.',
     status: 'in-progress',
     icon: 'Sparkles',
   },
@@ -106,8 +109,8 @@ export const ROADMAP_ITEMS: RoadmapMilestone[] = [
 export const FAQ_ITEMS: FaqItem[] = [
   {
     category: 'gameplay',
-    question: 'How does Capy Valley idle gameplay work on Solana?',
-    answer: 'You manage a cozy hillside farm with hot spring baths and yuzu fruit groves. Your groves generate Yuzu leaves every second. Thanks to Solana 400ms block times and sub-cent fees, tapping groves and claiming yields is instant and virtually free.',
+    question: 'How do I get guaranteed access to the Pioneer Whitelist?',
+    answer: 'Follow @shreyahunt on 𝕏, complete the community rituals on the Whitelist page, and submit your Solana wallet address. The first 1,200 followers receive Guaranteed Free Claim spots.',
   },
   {
     category: 'vault',

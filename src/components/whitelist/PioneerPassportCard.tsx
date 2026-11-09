@@ -6,7 +6,8 @@ import BrutalButton from '../common/BrutalButton';
 import CapyPixelRenderer from '../canvas/CapyPixelRenderer';
 import { WhitelistEntry } from '@/lib/types';
 import { formatAddress } from '@/lib/solana';
-import { Share2, Sparkles, CheckCircle2 } from 'lucide-react';
+import { SITE_METADATA } from '@/lib/constants';
+import { Share2, Sparkles, CheckCircle2, ExternalLink } from 'lucide-react';
 
 interface PioneerPassportCardProps {
   entry: WhitelistEntry;
@@ -15,9 +16,9 @@ interface PioneerPassportCardProps {
 
 export default function PioneerPassportCard({ entry, onReset }: PioneerPassportCardProps) {
   const shareText = encodeURIComponent(
-    `Just secured my Solana Pioneer Whitelist spot for @CapyValleySol! ♨️🍊\n\nPioneer Pass #${String(
+    `Just secured my Solana Pioneer Whitelist spot for @${SITE_METADATA.twitterHandle}'s Capy Valley! ♨️🍊\n\nPioneer Pass #${String(
       entry.pioneerId
-    ).padStart(4, '0')} verified on Solana. Raising dynamic Baby Capys and harvesting $CAPY with sub-cent fees.\n\nJoin the Hot Springs:`
+    ).padStart(4, '0')} verified on Solana. Follow @${SITE_METADATA.twitterHandle} and drop your Solana wallet below to get whitelisted:`
   );
   const shareUrl = encodeURIComponent('https://capyvalleysol.xyz/whitelist');
 
@@ -73,11 +74,28 @@ export default function PioneerPassportCard({ entry, onReset }: PioneerPassportC
           <BrutalButton
             variant="secondary"
             size="lg"
-            className="w-full gap-2"
+            className="w-full gap-2 text-sm sm:text-base font-black"
             soundType="chime"
           >
             <Share2 className="w-5 h-5" />
-            Share Passport on 𝕏 to Claim +25 FP Bonus
+            Share on 𝕏 (Tagging @{SITE_METADATA.twitterHandle} for +25 FP)
+          </BrutalButton>
+        </a>
+
+        <a
+          href={SITE_METADATA.twitterFollowIntent}
+          target="_blank"
+          rel="noreferrer"
+          className="block w-full"
+        >
+          <BrutalButton
+            variant="outline"
+            size="md"
+            className="w-full gap-2 text-xs font-black"
+          >
+            <span>𝕏</span>
+            Follow @{SITE_METADATA.twitterHandle} for Direct Mint Ping
+            <ExternalLink className="w-3.5 h-3.5" />
           </BrutalButton>
         </a>
 

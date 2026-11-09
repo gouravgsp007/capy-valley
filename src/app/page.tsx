@@ -2,6 +2,7 @@
 
 import React, { useState } from 'react';
 import HeroSection from '@/components/home/HeroSection';
+import TwitterFollowBanner from '@/components/common/TwitterFollowBanner';
 import GameLoopSection from '@/components/home/GameLoopSection';
 import FarmPowerCalculator from '@/components/home/FarmPowerCalculator';
 import VaultStatsPreview from '@/components/home/VaultStatsPreview';
@@ -23,6 +24,7 @@ export default function HomePage() {
     <div className={`transition-colors duration-700 min-h-screen ${bgClasses}`}>
       <AtmosphereCanvas mode={atmosphere} />
       <HeroSection atmosphere={atmosphere} onAtmosphereChange={setAtmosphere} />
+      <TwitterFollowBanner />
       <GameLoopSection />
       <FarmPowerCalculator />
       <VaultStatsPreview />

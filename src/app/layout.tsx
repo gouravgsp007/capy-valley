@@ -2,6 +2,7 @@ import type { Metadata } from 'next';
 import '@/styles/globals.css';
 import Navbar from '@/components/common/Navbar';
 import Footer from '@/components/common/Footer';
+import FloatingTwitterPill from '@/components/common/FloatingTwitterPill';
 import { SITE_METADATA } from '@/lib/constants';
 
 export const metadata: Metadata = {
@@ -23,6 +24,7 @@ export default function RootLayout({
         <Navbar />
         <main className="flex-1 relative z-10">{children}</main>
         <Footer />
+        <FloatingTwitterPill />
       </body>
     </html>
   );
