@@ -221,7 +221,7 @@ export default function WhitelistLeaderboard() {
           <span className="w-1.5 h-1.5 rounded-full bg-[#14F195]" />
           Synchronized with @shreyahunt whitelist ledger
         </span>
-        <span>Rotating live stream across 500 community pioneers</span>
+        <span>Live Pioneer registration stream updating in real time</span>
       </div>
     </div>
   );
