@@ -95,7 +95,7 @@ export default function WhitelistPage() {
           </div>
         )}
 
-        {/* Live Leaderboard & CSV Download */}
+        {/* Live Dynamic Solana Pioneer Leaderboard */}
         <WhitelistLeaderboard />
       </div>
     </div>
