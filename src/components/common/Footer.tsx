@@ -23,7 +23,7 @@ export default function Footer() {
             <div className="flex items-center gap-2 pt-2">
               <span className="w-3 h-3 rounded-full bg-solana-green animate-pulse border border-ink" />
               <span className="text-xs text-ink/70 font-black">
-                Solana Reward Vault Reserves: 5,420,000 $CAPY (~$128,400)
+                Solana In-Game Reward Pool: 5,420,000 $CAPY (In-Game Utility)
               </span>
             </div>
           </div>

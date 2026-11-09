@@ -60,7 +60,7 @@ export const DROP_TIERS = [
   {
     tier: 'Whitelist Stage',
     supply: '3,800',
-    price: '0.18 SOL (~$28)',
+    price: '0.18 SOL',
     perks: 'Priority 24h mint window on Magic Eden / Tensor, 1x Free Yuzu Basket in-game starter pack.',
     badge: 'Priority',
     highlight: false,
@@ -68,7 +68,7 @@ export const DROP_TIERS = [
   {
     tier: 'Public Drop',
     supply: '5,000',
-    price: '0.35 SOL (~$55)',
+    price: '0.35 SOL',
     perks: 'Open to everyone with a Phantom, Solflare or Backpack wallet. Instant in-game staking utility.',
     badge: 'Public',
     highlight: false,

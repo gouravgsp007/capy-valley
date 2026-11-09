@@ -134,11 +134,11 @@ export default function WhitelistLeaderboard() {
           </div>
         </div>
 
-        {/* Live Status Indicator (Replaces Download CSV) */}
+        {/* Live Status Indicator */}
         <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-xl bg-cream border-[2px] border-ink text-xs font-black text-ink shadow-brutal-sm">
           <span className="w-2.5 h-2.5 rounded-full bg-solana-green animate-ping" />
           <Radio className="w-3.5 h-3.5 text-solana-purple" />
-          <span>Solana RPC Feed • Active</span>
+          <span>Community Leaderboard • Live Activity</span>
         </div>
       </div>
 

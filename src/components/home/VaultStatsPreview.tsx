@@ -36,9 +36,9 @@ export default function VaultStatsPreview() {
             <div className="w-12 h-12 rounded-xl bg-solana-purple border-[2px] border-ink flex items-center justify-center text-2xl shadow-brutal-sm text-white">
               <Lock className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-black text-ink">Principal Return Guarantee</h3>
+            <h3 className="text-xl font-black text-ink">In-Game Inventory Protection</h3>
             <p className="text-sm text-ink/70 leading-relaxed font-bold">
-              When you lock tokens in the Barn for a Farm Power multiplier, your tokens never vanish. They unlock and return 100% to your Phantom or Solflare wallet when the lock duration ends.
+              When you lock tokens in the Barn for a Farm Power multiplier, tokens stay under your control. They unlock directly back into your game inventory when the lock duration completes.
             </p>
           </div>
 
@@ -46,11 +46,18 @@ export default function VaultStatsPreview() {
             <div className="w-12 h-12 rounded-xl bg-[#2ED573] border-[2px] border-ink flex items-center justify-center text-2xl shadow-brutal-sm text-white">
               <Shield className="w-6 h-6" />
             </div>
-            <h3 className="text-xl font-black text-ink">Non-Custodial On-Chain Yield</h3>
+            <h3 className="text-xl font-black text-ink">Non-Custodial In-Game Rewards</h3>
             <p className="text-sm text-ink/70 leading-relaxed font-bold">
-              Your harvested earnings are held in your game account PDA on Solana. Selling or trading your Capy NFT on Magic Eden or Tensor never takes your accrued earnings with it.
+              Harvested in-game items and tokens belong to your decentralized Solana account. Trading your Capy NFT on Magic Eden or Tensor never takes your accumulated in-game rewards with it.
             </p>
           </div>
+        </div>
+
+        {/* Gaming Entertainment Disclaimer for AdSense */}
+        <div className="text-center pt-2">
+          <p className="text-xs text-ink/60 font-bold max-w-xl mx-auto border border-ink/20 rounded-xl py-2 px-4 bg-sand/40">
+            🎮 <strong>Disclaimer:</strong> Capy Valley is a casual digital game for entertainment. Farm Power and in-game $CAPY are virtual utility mechanics with no promised monetary value and do not constitute financial advice.
+          </p>
         </div>
       </div>
     </section>

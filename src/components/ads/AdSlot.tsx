@@ -43,13 +43,13 @@ export default function AdSlot({
     <div
       className={`w-full max-w-5xl mx-auto my-8 overflow-hidden rounded-2xl border-[2.5px] border-ink/20 bg-cream/40 p-3 text-center ${className}`}
     >
-      <div className="text-[10px] uppercase tracking-widest font-black text-ink/40 mb-1">
-        Sponsored Advertisement
+      <div className="text-[11px] uppercase tracking-wider font-black text-ink/50 mb-2 border-b border-ink/10 pb-1">
+        Advertisement
       </div>
       <ins
         ref={adRef}
         className="adsbygoogle block"
-        style={{ display: 'block', minHeight: '90px' }}
+        style={{ display: 'block', minHeight: '100px' }}
         data-ad-client={publisherId}
         data-ad-slot={slotId}
         data-ad-format={format}

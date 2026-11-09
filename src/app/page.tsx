@@ -9,6 +9,7 @@ import RoadmapTimeline from '@/components/home/RoadmapTimeline';
 import FaqAccordion from '@/components/home/FaqAccordion';
 import AtmosphereCanvas from '@/components/canvas/AtmosphereCanvas';
 import AdSlot from '@/components/ads/AdSlot';
+import ValleyLoreGuide from '@/components/home/ValleyLoreGuide';
 import { AtmosphereMode } from '@/lib/types';
 
 export default function HomePage() {
@@ -27,7 +28,8 @@ export default function HomePage() {
       <GameLoopSection />
       <FarmPowerCalculator />
       <VaultStatsPreview />
-      <div className="max-w-6xl mx-auto px-4">
+      <ValleyLoreGuide />
+      <div className="max-w-6xl mx-auto px-4 my-10">
         <AdSlot slotId="capy-home-mid-banner" />
       </div>
       <RoadmapTimeline />
