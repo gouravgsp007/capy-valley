@@ -22,20 +22,12 @@ export default function WhitelistPage() {
       type: 'x-follow',
     },
     {
-      id: 'repost-announcement',
-      label: `Repost @${SITE_METADATA.twitterHandle}'s Solana Announcement`,
-      description: 'Spread the cozy onsen vibes and boost your wallet priority.',
-      link: `https://x.com/${SITE_METADATA.twitterHandle}`,
+      id: 'like-repost-announcement',
+      label: `Like and Repost @${SITE_METADATA.twitterHandle}'s Announcement tweet`,
+      description: `Like and repost @${SITE_METADATA.twitterHandle}'s pinned announcement tweet to boost your entry priority.`,
+      link: SITE_METADATA.twitterUrl,
       completed: false,
       type: 'x-repost',
-    },
-    {
-      id: 'join-community',
-      label: 'Join Hot Springs Telegram & Discord',
-      description: 'Meet fellow Solana valley pioneers and claim early holder roles.',
-      link: 'https://t.me',
-      completed: false,
-      type: 'telegram',
     },
   ]);
 
@@ -59,10 +51,10 @@ export default function WhitelistPage() {
             SOLANA PIONEER ACCESS
           </PixelBadge>
           <h1 className="text-4xl sm:text-5xl lg:text-6xl font-black text-ink leading-tight">
-            Earn your Lil Capy spot in three minutes.
+            Earn your Lil Capy spot in two minutes.
           </h1>
           <p className="text-lg text-ink/80 leading-relaxed font-bold">
-            Follow <a href={SITE_METADATA.twitterFollowIntent} target="_blank" rel="noreferrer" className="underline decoration-solana-purple decoration-[3px] text-ink hover:text-solana-purple">@{SITE_METADATA.twitterHandle} on 𝕏</a> for guaranteed Pioneer mint allocation on Solana with sub-cent network fees and zero gas wars.
+            Follow <a href={SITE_METADATA.twitterFollowIntent} target="_blank" rel="noreferrer" className="underline decoration-solana-purple decoration-[3px] text-ink hover:text-solana-purple">@{SITE_METADATA.twitterHandle} on 𝕏</a> and like & repost the announcement tweet for guaranteed Pioneer mint allocation on Solana.
           </p>
         </div>
 
@@ -87,7 +79,7 @@ export default function WhitelistPage() {
               </span>
             </div>
 
-            {/* Step 1: Social Checklist */}
+            {/* Step 1: Social Checklist (Twitter only) */}
             <SocialChecklist tasks={tasks} onToggleTask={handleToggleTask} />
 
             {/* Step 2: Wallet Submission */}

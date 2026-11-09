@@ -25,7 +25,7 @@ export default function SocialChecklist({ tasks, onToggleTask }: SocialChecklist
     <div className="space-y-3">
       <div className="flex items-center justify-between">
         <label className="text-xs font-black text-ink/70 uppercase">
-          Step 1: Complete Community Rituals
+          Step 1: Complete 𝕏 Steps
         </label>
         <span className="text-xs font-black text-matcha">
           {tasks.filter((t) => t.completed).length} of {tasks.length} Done
