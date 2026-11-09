@@ -32,7 +32,7 @@ export default function Navbar() {
   };
 
   return (
-    <header className="sticky top-0 z-40 w-full bg-sand/90 backdrop-blur-md border-b-[3px] border-ink px-4 lg:px-8 py-3.5">
+    <header className="sticky top-0 z-40 w-full bg-[#F7C75D] border-b-[3px] border-ink px-4 lg:px-8 py-3.5 shadow-sm">
       <div className="max-w-7xl mx-auto flex items-center justify-between gap-4">
         {/* Brand Logo */}
         <Link
@@ -40,31 +40,31 @@ export default function Navbar() {
           onClick={closeMenu}
           className="flex items-center gap-2.5 sm:gap-3 group select-none cursor-pointer"
         >
-          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-yuzu border-[2.5px] border-ink shadow-brutal-sm flex items-center justify-center text-lg sm:text-xl group-hover:rotate-6 transition-transform shrink-0">
+          <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-snow border-[2.5px] border-ink shadow-brutal-sm flex items-center justify-center text-lg sm:text-xl group-hover:rotate-6 transition-transform shrink-0">
             🍊
           </div>
           <div>
-            <span className="font-black text-lg sm:text-xl tracking-tight text-ink block leading-none">
+            <span className="font-black text-lg sm:text-xl tracking-tight text-[#3E1D0C] block leading-none">
               Capy Valley
             </span>
-            <span className="text-[10px] sm:text-[11px] font-black uppercase text-matcha tracking-widest block mt-0.5">
+            <span className="text-[10px] sm:text-[11px] font-black uppercase text-[#3E1D0C]/80 tracking-widest block mt-0.5">
               by @{SITE_METADATA.twitterHandle}
             </span>
           </div>
         </Link>
 
         {/* Desktop Navigation Links */}
-        <nav className="hidden md:flex items-center gap-4 lg:gap-7">
+        <nav className="hidden md:flex items-center gap-6 lg:gap-8">
           {navLinks.map((link) => {
             const isActive = pathname === link.href;
             return (
               <Link
                 key={link.label}
                 href={link.href}
-                className={`text-[17px] font-black tracking-tight transition-all duration-150 hover:text-matcha ${
+                className={`text-[17px] sm:text-[18px] font-black tracking-tight transition-all duration-150 ${
                   isActive
-                    ? 'text-ink underline decoration-[3px] underline-offset-4 decoration-yuzu-gold'
-                    : 'text-ink/90'
+                    ? 'text-[#3E1D0C] underline decoration-[3px] underline-offset-4 decoration-[#3E1D0C]'
+                    : 'text-[#3E1D0C] hover:opacity-75'
                 }`}
               >
                 {link.label}
@@ -115,7 +115,7 @@ export default function Navbar() {
               key={link.label}
               href={link.href}
               onClick={closeMenu}
-              className="px-4 py-2.5 rounded-xl font-black text-base text-ink hover:bg-cream active:bg-sand border-[2px] border-transparent hover:border-ink transition-all"
+              className="px-4 py-2.5 rounded-xl font-black text-base text-[#3E1D0C] bg-white/40 hover:bg-white/70 active:bg-white/90 border-[2px] border-ink/30 hover:border-ink transition-all"
             >
               {link.label}
             </Link>
